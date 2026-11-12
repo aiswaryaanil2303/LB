@@ -71,7 +71,14 @@ def partner():
 
 @app.route("/contact")
 def Contact():
-    return render_template("contact.html", country=g.selected_country, phone=g.phone, mail=g.mail)
+    return render_template(
+        "contact.html",
+        country=g.selected_country,
+        phone=g.phone,
+        mail=g.mail,
+        country_phone_mapping=country_phone_mapping,
+        country_mail_mapping=country_mail_mapping,
+    )
 
 
 @app.route("/Verifycertificate")

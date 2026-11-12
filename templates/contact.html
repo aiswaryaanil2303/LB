@@ -10,7 +10,7 @@
         <div class="position-relative">
             <!-- Background -->
             <div class="background-image"
-                style="background-image: url('https://dorsetfireprotection.co.uk/app/uploads/2020/03/fire-safety-training.jpg'); height: 40vh; background-size: cover; background-position: center;">
+                style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLf38eA0MG3269kbZAh2EfdUyBGvOGPkDK0aUDUTHHzBDyC7RI0cV3T9d3&s=10'); height: 40vh; background-size: cover; background-position: center;">
             </div>
 
             <!-- Dark overlay -->
@@ -48,86 +48,274 @@
             margin-top: 0 !important;
         }
     }
+
+    .contact-directory {
+        background-color: #fff;
+    }
+
+    .contact-form-card {
+        background-color: #f7f8f8;
+    }
+
+    .contact-form-card .form-control,
+    .contact-form-card .form-select {
+        border: 0;
+        border-bottom: 1px solid #cfd5d6;
+        border-radius: 0;
+        background-color: transparent;
+        font-size: .9rem;
+    }
+
+    .contact-form-card .form-control:focus,
+    .contact-form-card .form-select:focus {
+        box-shadow: none;
+        border-bottom-color: #75D457;
+    }
+
+    .contact-useful-link {
+        border-bottom: 1px solid #e8ecec;
+        padding: 0 0 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .contact-useful-link a {
+        color: #0c8b73;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .contact-useful-link a:hover {
+        text-decoration: underline;
+    }
+
+    .contact-offices .accordion-button {
+        font-weight: 700;
+        color: #0c334a;
+    }
+
+    .contact-offices .accordion-button:not(.collapsed) {
+        background-color: #f4f8f6;
+        box-shadow: none;
+    }
+
+    .contact-map {
+        position: relative;
+    }
+
+    .contact-map img {
+        width: 100%;
+        opacity: .2;
+    }
+
+    .contact-map-marker {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        border: 3px solid #fff;
+        border-radius: 50%;
+        background: #35b8a0;
+        box-shadow: 0 0 0 2px #35b8a0;
+    }
+
+    .contact-map-marker--canada { left: 25%; top: 31%; }
+    .contact-map-marker--uk { left: 48%; top: 34%; }
+    .contact-map-marker--qatar { left: 55%; top: 47%; }
+    .contact-map-marker--india { left: 62%; top: 51%; }
 </style>
 
 
 <!-- Contact Us Section -->
-<section class="py-5" >
+<section class="contact-directory py-5">
     <div class="container">
-        <div class="text-center mb-5">
-            <!-- <h2 class="fw-bold">Contact Us</h2> -->
-            <p class="text-muted">We’d love to hear from you! Reach out to us for any queries or support.</p>
-        </div>
-
-        <div class="row g-5">
-            <!-- Contact Form -->
-            <div class="col-lg-6">
-                <div class="card shadow-sm border-0 rounded-5" style="background-color: #f0fff4;">
-                    <div class="card-body p-4">
-                        <h4 class="card-title mb-4">Send Us a Message</h4>
-                        <form action="{{ url_for('Contact') }}" method="post">
-                            <!-- Name -->
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name"
-                                    required>
+        <div class="row g-4 g-lg-5 align-items-start">
+            <div class="col-lg-5">
+                <div class="contact-form-card h-100 p-4 p-md-5">
+                    <h2 class="h4 fw-bold mb-4">Contact us</h2>
+                    <form action="{{ url_for('Contact') }}" method="post">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label" for="first-name">First name <span class="text-danger">*</span></label>
+                                <input class="form-control" id="first-name" name="first_name" autocomplete="given-name" required>
                             </div>
-
-                            <!-- Choose Course -->
-                            <div class="mb-3">
-                                <label for="course" class="form-label">Choose Course</label>
-                                <select class="form-select" id="course" name="course" required>
-                                    <option value="" selected disabled>Select a course</option>
-                                    <option value="course1">Course 1</option>
-                                    <option value="course2">Course 2</option>
-                                    <option value="course3">Course 3</option>
-                                    <option value="course4">Course 4</option>
+                            <div class="col-md-6">
+                                <label class="form-label" for="last-name">Last name <span class="text-danger">*</span></label>
+                                <input class="form-control" id="last-name" name="last_name" autocomplete="family-name" required>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label" for="contact-email">Email address <span class="text-danger">*</span></label>
+                                <input class="form-control" id="contact-email" name="email" type="email" autocomplete="email" required>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label" for="company">Company / institution</label>
+                                <input class="form-control" id="company" name="company">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label" for="company-address">Company / institution address</label>
+                                <input class="form-control" id="company-address" name="company_address" autocomplete="street-address">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label" for="contact-phone">Phone number</label>
+                                <input class="form-control" id="contact-phone" name="phone" type="tel" autocomplete="tel">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label" for="job-title">Job title</label>
+                                <input class="form-control" id="job-title" name="job_title">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label" for="contact-country">Country / region <span class="text-danger">*</span></label>
+                                <select class="form-select" id="contact-country" name="country" required>
+                                    <option value="" disabled {% if not country %}selected{% endif %}>Select country / region</option>
+                                    {% for office_country in country_phone_mapping %}
+                                    <option value="{{ office_country }}" {% if country == office_country %}selected{% endif %}>{{ office_country }}</option>
+                                    {% endfor %}
                                 </select>
                             </div>
-
-                            <!-- Phone -->
-                            <div class="mb-3">
-                                <label for="phone" class="form-label">Phone Number</label>
-                                <input type="tel" class="form-control" id="phone" name="phone"
-                                    placeholder="Your Phone Number" required>
+                            <div class="col-12">
+                                <label class="form-label" for="enquiry-type">How can we help? <span class="text-danger">*</span></label>
+                                <select class="form-select" id="enquiry-type" name="enquiry_type" required>
+                                    <option value="" selected disabled>Select an enquiry type</option>
+                                    <option>Course information</option>
+                                    <option>Employment verification</option>
+                                    <option>Supplier relations</option>
+                                    <option>Media enquiry</option>
+                                    <option>Complaint or appeal</option>
+                                    <option>Other</option>
+                                </select>
                             </div>
-
-                            <!-- Message -->
-                            <div class="mb-3">
-                                <label for="message" class="form-label">Message</label>
-                                <textarea class="form-control" id="message" name="message" rows="5"
-                                    placeholder="Write your message here..." required></textarea>
+                            <div class="col-12">
+                                <label class="form-label" for="contact-message">Please provide details about your request <span class="text-danger">*</span></label>
+                                <textarea class="form-control" id="contact-message" name="message" rows="3" required></textarea>
                             </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" id="contact-privacy" name="privacy_consent" type="checkbox" required>
+                                    <label class="form-check-label small" for="contact-privacy">
+                                        I have read and agree to the privacy notice.
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12 pt-2">
+                                <button class="btn btn-success rounded-pill px-4" type="submit">Submit your request</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
 
-                            <!-- Submit Button -->
-                            <button type="submit" class="btn btn-success btn-lg w-100 text-white"
-                                style="transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#4cd964';"
-                                onmouseout="this.style.backgroundColor='#28a745';">
-                                Send Message
+            <div class="col-lg-7">
+                <h2 class="h4 fw-bold mb-4">Useful links</h2>
+                <div class="contact-useful-link">
+                    <h3 class="h6 fw-bold">Career opportunities</h3>
+                    <p class="small text-muted mb-1">For career opportunities, explore our current openings.</p>
+                    <a href="{{ url_for('careers') }}">View career opportunities</a>
+                </div>
+                <div class="contact-useful-link">
+                    <h3 class="h6 fw-bold">Employment verifications</h3>
+                    <p class="small text-muted mb-1">For employment verification enquiries, contact our team.</p>
+                    <a href="mailto:{{ mail }}?subject=Employment%20verification">Email us about a verification</a>
+                </div>
+                <div class="contact-useful-link">
+                    <h3 class="h6 fw-bold">Supplier relations</h3>
+                    <p class="small text-muted mb-1">For supplier-related enquiries, please get in touch.</p>
+                    <a href="mailto:{{ mail }}?subject=Supplier%20relations">Contact supplier relations</a>
+                </div>
+                <div class="contact-useful-link">
+                    <h3 class="h6 fw-bold">Media contacts</h3>
+                    <p class="small text-muted mb-1">For press and media enquiries, contact our team.</p>
+                    <a href="mailto:{{ mail }}?subject=Media%20enquiry">Contact media relations</a>
+                </div>
+                <div class="contact-useful-link">
+                    <h3 class="h6 fw-bold">Report a concern</h3>
+                    <p class="small text-muted mb-1">Tell us about a concern or share feedback with our team.</p>
+                    <a href="{{ url_for('feedback') }}">Report a concern</a>
+                </div>
+                <div class="contact-useful-link border-0 mb-0">
+                    <h3 class="h6 fw-bold">Request take-back</h3>
+                    <p class="small text-muted mb-1">Contact us to discuss a take-back request.</p>
+                    <a href="mailto:{{ mail }}?subject=Take-back%20request">Request a take-back</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4 align-items-center mt-4">
+            <div class="col-lg-4">
+                <div class="accordion contact-offices" id="contact-offices">
+                    {% for office_country, office_phone in country_phone_mapping.items() %}
+                    {% set office_id = 'office-' ~ loop.index %}
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="{{ office_id }}-heading">
+                            <button class="accordion-button {% if office_country != 'Qatar' %}collapsed{% endif %}" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#{{ office_id }}"
+                                aria-expanded="{{ 'true' if office_country == 'Qatar' else 'false' }}"
+                                aria-controls="{{ office_id }}">
+                                {{ office_country }}
                             </button>
-                        </form>
+                        </h3>
+                        <div id="{{ office_id }}" class="accordion-collapse collapse {% if office_country == 'Qatar' %}show{% endif %}"
+                            aria-labelledby="{{ office_id }}-heading" data-bs-parent="#contact-offices">
+                            <div class="accordion-body small">
+                                <strong>{{ office_country }} office</strong>
+                                <p class="mb-1">
+                                    <a href="tel:{{ office_phone|replace(' ', '')|replace('(', '')|replace(')', '')|replace('-', '') }}">{{ office_phone }}</a>
+                                </p>
+                                <a href="mailto:{{ country_mail_mapping[office_country] }}">{{ country_mail_mapping[office_country] }}</a>
+                            </div>
+                        </div>
                     </div>
+                    {% endfor %}
                 </div>
             </div>
-
-
-            <!-- Contact Info & Google Map -->
-            <div class="col-lg-6">
-                <div class="mb-4">
-                    <h4 class="fw-bold">Our Office</h4>
-                    <p><i class="bi bi-geo-alt-fill me-2"></i>Lloyids Bureau, UAE</p>
-                    <p><i class="bi bi-telephone-fill me-2"></i>+966 55 274 1995</p>
-                    <p><i class="bi bi-envelope-fill me-2"></i>info@Lloyidsbureau.com</p>
-                    <p><i class="bi bi-clock-fill me-2"></i>Mon - Sat: 9:00 AM - 6:00 PM</p>
-                </div>
-
-                <div class="card shadow-sm border-0">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3567.298161774365!2d76.60182027449757!3d8.880261391300577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05fdb97250aad5%3A0xbff685223bfa38ea!2sInspireZest%20Technologies%20Pvt%20Ltd!5e1!3m2!1sen!2sin!4v1759733765241!5m2!1sen!2sin"
-                        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
-                        class="rounded-2"></iframe>
+            <div class="col-lg-8">
+                <div class="contact-map" role="img" aria-label="Map showing Lloyds Bureau office regions in Canada, the United Kingdom, Qatar, and India">
+                    <img src="{{ url_for('static', filename='images/maplocations.jpg') }}" alt="" loading="lazy">
+                    <span class="contact-map-marker contact-map-marker--canada" aria-hidden="true"></span>
+                    <span class="contact-map-marker contact-map-marker--uk" aria-hidden="true"></span>
+                    <span class="contact-map-marker contact-map-marker--qatar" aria-hidden="true"></span>
+                    <span class="contact-map-marker contact-map-marker--india" aria-hidden="true"></span>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-4" aria-labelledby="confidentiality-heading">
+    <div class="container">
+        <div class="border-top border-bottom border-danger border-2 py-3">
+            <h2 id="confidentiality-heading" class="h5 fw-bold">Confidentiality</h2>
+            <p class="mb-2">
+                Complaints relating to the performance of one of our customers will typically be forwarded to that
+                customer for review and response. For all other complaints, confidentiality will be maintained, and
+                information will not be disclosed to a third party without the complainant's consent.
+            </p>
+            <p class="mb-2">
+                This process also applies when Lloyds Bureau receives an appeal, whether it relates to a complaint
+                decision or a certification decision, including suspension or withdrawal.
+            </p>
+            <p class="mb-0">
+                To contact the relevant business area or initiate a complaint or appeal, please use the link below.
+            </p>
+        </div>
+
+        <div class="py-4">
+            <h2 class="h5 fw-bold">Register a Complaint or Appeal</h2>
+            <p>
+                At Lloyds Bureau, we take every complaint seriously and have established a well-defined process for
+                prompt handling of complaints from our stakeholders. We encourage our valued customers to provide
+                ongoing feedback throughout our projects. If you have a specific complaint, please follow the process
+                outlined below.
+            </p>
+            <a class="btn btn-success text-white" href="{{ url_for('feedback') }}">
+                Register a Complaint or Appeal
+            </a>
+        </div>
+
+        <div class="pt-2">
+            <h2 class="h5 fw-bold mb-3">Handling of Complaints or Appeals</h2>
+            <img
+                src="{{ url_for('static', filename='images/complaint-handling-process.png') }}"
+                class="img-fluid d-block mx-auto"
+                alt="Lloyds Bureau complaint handling process: complaint received, acknowledged, assessed and categorized, investigated, resolved, followed up for customer feedback, then closed and monitored."
+                loading="lazy">
         </div>
     </div>
 </section>

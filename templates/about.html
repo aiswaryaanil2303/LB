@@ -101,33 +101,35 @@
 
             <!-- Hover-to-open JavaScript -->
             <script>
-                document.querySelectorAll(".hover-accordion").forEach((btn) => {
+                document.addEventListener("DOMContentLoaded", () => {
+                    document.querySelectorAll(".hover-accordion").forEach((btn) => {
 
-                    const targetId = btn.getAttribute("data-bs-target");
-                    const targetEl = document.querySelector(targetId);
+                        const targetId = btn.getAttribute("data-bs-target");
+                        const targetEl = document.querySelector(targetId);
 
-                    // Create collapse controller
-                    const collapse = new bootstrap.Collapse(targetEl, {
-                        toggle: false
+                        // Create collapse controller
+                        const collapse = new bootstrap.Collapse(targetEl, {
+                            toggle: false
+                        });
+
+                        // Disable click toggle (VERY IMPORTANT)
+                        btn.addEventListener("click", (e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            return false;
+                        });
+
+                        // OPEN on hover over button
+                        btn.addEventListener("mouseenter", () => {
+                            collapse.show();
+                        });
+
+                        // CLOSE when mouse leaves the whole accordion-item
+                        btn.closest(".accordion-item").addEventListener("mouseleave", () => {
+                            collapse.hide();
+                        });
+
                     });
-
-                    // Disable click toggle (VERY IMPORTANT)
-                    btn.addEventListener("click", (e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        return false;
-                    });
-
-                    // OPEN on hover over button
-                    btn.addEventListener("mouseenter", () => {
-                        collapse.show();
-                    });
-
-                    // CLOSE when mouse leaves the whole accordion-item
-                    btn.closest(".accordion-item").addEventListener("mouseleave", () => {
-                        collapse.hide();
-                    });
-
                 });
             </script>
 
@@ -1444,71 +1446,86 @@
 
 
 
-<section class="container py-5" id="explore-more">
-    <h2 class="mb-4 fw-bold">Explore more</h2>
-
+<section class="container py-5 about-spotlight" id="explore-more">
     <div class="row g-4">
-
-        <!-- Card -->
-        <div class="col-md-4">
-            <div class="explore-card">
-                <img src="https://media.istockphoto.com/id/1213499152/photo/sample-online-news-website-on-tablet.jpg?s=612x612&w=0&k=20&c=jvg2lHSshsqccRYpA0I6JMGq-RDKJg1OGqgVBH_Er7Q="
-                    class="card-img" alt="">
-
-                <div class="overlay">
-                    <h5>Latest news and blogs</h5>
-
-                    <a href="/news-blogs" class="learn-more">
-                        Learn more
-                        <span class="arrow">
-                            <i class="ri-arrow-right-up-line arrow-up"></i>
-                            <i class="ri-arrow-right-line arrow-right"></i>
-                        </span>
-                    </a>
+        <div class="col-lg-8">
+            <h2 class="mb-4 fw-bold">Explore more</h2>
+            <div class="row g-3">
+                <div class="col-sm-6" data-aos="fade-up">
+                    <div class="explore-card">
+                        <img src="https://nistglobal.com/blog/wp-content/uploads/2025/09/why-you-should-conduct-fire-safety-training-at-work.jpg"
+                            class="card-img" alt="Workplace fire safety training">
+                        <div class="overlay">
+                            <h5>Fire Safety Training Update</h5>
+                            <a href="/news-blogs" class="learn-more">Learn more <span class="arrow"><i class="ri-arrow-right-up-line arrow-up"></i><i class="ri-arrow-right-line arrow-right"></i></span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6" data-aos="fade-up" data-aos-delay="75">
+                    <div class="explore-card">
+                        <img src="https://greenwgroup.co.in/wp-content/uploads/2017/07/firesafety-1_39_11zon.jpg"
+                            class="card-img" alt="Fire safety certification">
+                        <div class="overlay">
+                            <h5>Certification Guidelines</h5>
+                            <a href="/news-blogs" class="learn-more">Learn more <span class="arrow"><i class="ri-arrow-right-up-line arrow-up"></i><i class="ri-arrow-right-line arrow-right"></i></span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6" data-aos="fade-up">
+                    <div class="explore-card">
+                        <img src="/static/images/4131.jpg" class="card-img" alt="Lloyds Bureau in the media">
+                        <div class="overlay">
+                            <h5>LB Certifications in Media</h5>
+                            <a href="/news-blogs" class="learn-more">Learn more <span class="arrow"><i class="ri-arrow-right-up-line arrow-up"></i><i class="ri-arrow-right-line arrow-right"></i></span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6" data-aos="fade-up" data-aos-delay="75">
+                    <div class="explore-card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE6qqIwk1XADXX5CmSk9tytj01IGVp7zIBCXVC3JCshn8vFz2rXVtI-vdANiAVXeHWrAY&usqp=CAU"
+                            class="card-img" alt="Professional certification programs">
+                        <div class="overlay">
+                            <h5>Upcoming Certification Programs</h5>
+                            <a href="/news-blogs" class="learn-more">Learn more <span class="arrow"><i class="ri-arrow-right-up-line arrow-up"></i><i class="ri-arrow-right-line arrow-right"></i></span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6" data-aos="fade-up">
+                    <div class="explore-card">
+                        <img src="/static/images/4131.jpg" class="card-img" alt="Certificate verification guidance">
+                        <div class="overlay">
+                            <h5>Certificate Verification Tips</h5>
+                            <a href="/news-blogs" class="learn-more">Learn more <span class="arrow"><i class="ri-arrow-right-up-line arrow-up"></i><i class="ri-arrow-right-line arrow-right"></i></span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6" data-aos="fade-up" data-aos-delay="75">
+                    <div class="explore-card">
+                        <img src="/static/images/2148784052.jpg" class="card-img" alt="Safety professional at work">
+                        <div class="overlay">
+                            <h5>Client Success Stories</h5>
+                            <a href="/news-blogs" class="learn-more">Learn more <span class="arrow"><i class="ri-arrow-right-up-line arrow-up"></i><i class="ri-arrow-right-line arrow-right"></i></span></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <!-- Card -->
-        <div class="col-md-4">
-            <div class="explore-card">
-                <img src="https://media.istockphoto.com/id/2062707205/photo/gold-star-on-a-blue-background-as-a-reward-top-performance-award-winners-cup-achievements.jpg?s=612x612&w=0&k=20&c=6HeaeFYryuuOyPTW8ucQKsUMUi3F8oHvE9CSPVgoV60="
-                    class="card-img" alt="">
-
-                <div class="overlay">
-                    <h5>Our latest awards & recognition</h5>
-
-                    <a href="/news-blogs" class="learn-more">
-                        Learn more
-                        <span class="arrow">
-                            <i class="ri-arrow-right-up-line arrow-up"></i>
-                            <i class="ri-arrow-right-line arrow-right"></i>
-                        </span>
-                    </a>
-                </div>
+        <aside class="col-lg-4" data-aos="fade-left">
+            <div class="about-explore-sidebar">
+                <h2 class="h4 fw-bold">More from Lloyds Bureau</h2>
+                <p class="text-muted">Explore our services, training, and the standards that guide our work.</p>
+                <a class="about-sidebar-card" href="/services">
+                    <span class="about-sidebar-card__label">01 / Services</span>
+                    <strong>Explore our services</strong>
+                    <span>Discover how we support safety-critical industries.</span>
+                </a>
+                <a class="about-sidebar-card" href="/training-courses">
+                    <span class="about-sidebar-card__label">02 / Training</span>
+                    <strong>Find a training course</strong>
+                    <span>Browse practical training and certification options.</span>
+                </a>
             </div>
-        </div>
-
-        <!-- Card -->
-        <div class="col-md-4">
-            <div class="explore-card">
-                <img src="https://plus.unsplash.com/premium_photo-1661315406324-329dd27ebc34?fm=jpg&q=60&w=3000"
-                    class="card-img" alt="">
-
-                <div class="overlay">
-                    <h5>Our 2026 annual report</h5>
-
-                    <a href="/news-blogs" class="learn-more">
-                        Learn more
-                        <span class="arrow">
-                            <i class="ri-arrow-right-up-line arrow-up"></i>
-                            <i class="ri-arrow-right-line arrow-right"></i>
-                        </span>
-                    </a>
-                </div>
-            </div>
-        </div>
-
+        </aside>
     </div>
 </section>
 
@@ -1893,6 +1910,99 @@
 
 
 
+<section class="container py-4" id="irata-partner" data-aos="fade-up">
+    <div class="about-irata-feature row g-3 align-items-center p-3 p-md-4">
+        <div class="col-md-4 text-center">
+            <a class="about-irata-logo" href="https://irata.org/" target="_blank" rel="noopener noreferrer"
+                aria-label="Visit the IRATA website">
+                <img src="/static/training/irata.webp" alt="IRATA International">
+            </a>
+        </div>
+        <div class="col-md-8">
+            <span class="eyebrow d-block" style="font-size: .8rem;">Training and certification</span>
+            <h2 class="h4 fw-bold">International rope access training</h2>
+            <p class="text-muted mb-3">
+                Explore our IRATA training and certification options for professionals working at height.
+            </p>
+            <a class="about-feature-story__link" href="/training-courses">
+                Explore training courses <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="container py-4" data-aos="fade-up">
+    <article class="about-feature-story row g-4 align-items-center p-3 p-md-4">
+        <div class="col-md-4">
+            <img class="about-feature-story__image"
+                src="https://nistglobal.com/blog/wp-content/uploads/2025/09/why-you-should-conduct-fire-safety-training-at-work.jpg"
+                alt="Workplace fire safety training">
+        </div>
+        <div class="col-md-8">
+            <span class="eyebrow d-block" style="font-size: .8rem;">Latest insight</span>
+            <h2 class="h4 fw-bold">Building safer workplaces through fire safety training</h2>
+            <p class="text-muted">
+                Learn how practical training helps teams prepare for emergencies and support safer workplaces.
+            </p>
+            <a class="about-feature-story__link" href="/news-blogs">
+                Read more <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+        </div>
+    </article>
+</section>
+
+<section class="about-social-presence py-5" id="social-presence">
+    <div class="container">
+        <div class="text-center mb-4" data-aos="fade-up">
+            <h2 class="fw-bold">Lloyds Bureau social media presence</h2>
+            <p class="text-muted mb-0">
+                Follow our updates, training highlights, and stories from across the Lloyds Bureau community.
+            </p>
+        </div>
+        <div class="row g-4 align-items-stretch">
+            <div class="col-lg-5" data-aos="fade-right">
+                <div class="about-social-card">
+                    <img class="about-social-card__image" src="/static/images/4131.jpg"
+                        alt="Lloyds Bureau team sharing industry knowledge">
+                </div>
+            </div>
+            <div class="col-lg-7" data-aos="fade-left">
+                <div class="about-social-card about-social-card__content">
+                    <div class="about-social-profile">
+                        <img src="/static/images/logo.png" alt="">
+                        <div>
+                            <h3 class="h5 fw-bold mb-1">Lloyds Bureau</h3>
+                            <span class="text-muted small">Company updates and messages</span>
+                        </div>
+                    </div>
+                    <h4 class="h5 fw-bold">Stay connected with our team</h4>
+                    <p class="text-muted">
+                        Visit our LinkedIn page for company news, professional updates, and ways to connect with us.
+                    </p>
+                    <a class="about-social-link" href="https://www.linkedin.com/company/lloyds-bureau/"
+                        target="_blank" rel="noopener noreferrer">
+                        Follow Lloyds Bureau on LinkedIn
+                        <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="about-brand-card mt-4" data-aos="fade-up">
+            <img src="/static/images/lloyds-bureau-horizontal-logo-color-2-rgb-1900px-w-72ppi.png"
+                alt="Lloyds Bureau">
+            <div class="about-brand-card__content">
+                <h2 class="h4 fw-bold">About Lloyds Bureau</h2>
+                <p class="text-muted">
+                    We support organizations and professionals with training, inspection, and certification services.
+                    Get in touch to learn how we can support your team.
+                </p>
+                <a class="about-feature-story__link" href="/contact">
+                    Contact our team <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 
