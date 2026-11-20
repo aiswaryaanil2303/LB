@@ -133,26 +133,38 @@
 
 <script>
   (function () {
-    const fixedNav = document.getElementById('lbFixedHeader');
     const srvSection = document.getElementById('lbServicesSection');
 
-    function offsetServicesSection() {
-      if (fixedNav && srvSection) {
-        srvSection.style.marginTop = fixedNav.offsetHeight + 'px';
+    function resetServicesOffset() {
+      if (srvSection) {
+        srvSection.style.setProperty('margin-top', '0px', 'important');
       }
+      document.body.style.removeProperty('overflow');
+      document.documentElement.style.removeProperty('overflow');
     }
-    offsetServicesSection();
-    window.addEventListener('load', offsetServicesSection);
-    window.addEventListener('resize', offsetServicesSection);
+
+    resetServicesOffset();
+    window.addEventListener('load', resetServicesOffset);
+    window.addEventListener('pageshow', resetServicesOffset);
   })();
 </script>
 
 <style>
   /* ================= OUR SERVICES (3x3 REFERENCE GRID) ================= */
+  #lbServicesSection,
   .lb-srv-grid-section {
     font-family: 'Manrope', sans-serif;
     background-color: #F4F7FA;
-    padding: 56px 0 64px;
+    margin-top: 0 !important;
+    padding: 40px 0 64px !important;
+  }
+
+  @media (max-width: 991px) {
+    #lbServicesSection,
+    .lb-srv-grid-section {
+      padding-top: 26px !important;
+      padding-bottom: 48px !important;
+    }
   }
 
   .lb-srv-section-title {
@@ -325,6 +337,7 @@
         <script>
           document.addEventListener("DOMContentLoaded", () => {
             const title = document.getElementById("qualityTitle");
+            if (!title) return;
             const text = title.innerText;
             title.innerHTML = text.split("").map(char => `<span>${char}</span>`).join("");
             const letters = title.querySelectorAll("span");
