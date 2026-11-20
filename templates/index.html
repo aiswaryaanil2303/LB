@@ -252,19 +252,26 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const fixedNav = document.getElementById('lbFixedHeader');
+    const tabContent = document.getElementById('myTabContent');
     const heroSection = document.getElementById('heroSliderSection');
     const highlightsStrip = document.getElementById('heroHighlightsStrip');
 
     function keepHeroBelowNavbar() {
-      if (fixedNav && heroSection) {
+      if (tabContent) {
+        tabContent.style.setProperty('margin-top', '0px', 'important');
+      }
+
+      if (heroSection) {
         heroSection.style.setProperty('margin-top', '0px', 'important');
 
         if (window.innerWidth >= 992) {
-          const navHeight = fixedNav.offsetHeight;
-          const stripHeight = highlightsStrip ? highlightsStrip.offsetHeight : 0;
+          const navHeight = fixedNav ? (fixedNav.getBoundingClientRect().height || fixedNav.offsetHeight || 0) : 0;
+          const stripHeight = highlightsStrip ? (highlightsStrip.getBoundingClientRect().height || highlightsStrip.offsetHeight || 0) : 0;
           const heroHeight = window.innerHeight - navHeight - stripHeight;
           if (heroHeight > 380) {
             heroSection.style.setProperty('height', heroHeight + 'px', 'important');
+          } else {
+            heroSection.style.removeProperty('height');
           }
         } else {
           heroSection.style.removeProperty('height');
@@ -272,9 +279,17 @@
       }
     }
 
+    function resetPageReturnState() {
+      document.body.style.removeProperty('overflow');
+      document.documentElement.style.removeProperty('overflow');
+      keepHeroBelowNavbar();
+      if (window.AOS) window.AOS.refreshHard();
+    }
+
     keepHeroBelowNavbar();
     window.addEventListener('load', keepHeroBelowNavbar);
     window.addEventListener('resize', keepHeroBelowNavbar);
+    window.addEventListener('pageshow', resetPageReturnState);
 
     const heroCarouselEl = document.getElementById('carouselExampleFade');
     const heroVideo = document.getElementById('heroSlideVideo');
@@ -295,7 +310,7 @@
 </script>
 
 <style>
-  /* Remove any old margin/padding from style.css above hero */
+  /* Clean reset without forcing #myTabContent behind a sticky header */
   body,
   .overflow-hidden,
   #myTabContent,

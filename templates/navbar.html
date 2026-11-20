@@ -307,6 +307,16 @@
       });
     }
 
+    function resetMobileHeaderState() {
+      closeAll(null);
+      const navCollapse = document.getElementById('navbarNav');
+      if (navCollapse) {
+        navCollapse.classList.remove('show');
+      }
+      document.body.style.removeProperty('overflow');
+      document.documentElement.style.removeProperty('overflow');
+    }
+
     dropdowns.forEach(function (dd) {
       const trigger = dd.querySelector('.lb-dd-trigger');
       let closeTimer;
@@ -327,17 +337,19 @@
         }
       });
 
-      trigger.addEventListener('click', function (e) {
-        if (trigger.tagName === 'BUTTON' || trigger.getAttribute('href') === '#' || window.innerWidth < 992) {
-          e.preventDefault();
-          e.stopPropagation();
-          const isOpen = dd.classList.contains('lb-open');
-          closeAll(dd);
-          if (!isOpen) {
-            dd.classList.add('lb-open');
+      if (trigger) {
+        trigger.addEventListener('click', function (e) {
+          if (trigger.tagName === 'BUTTON' || trigger.getAttribute('href') === '#' || window.innerWidth < 992) {
+            e.preventDefault();
+            e.stopPropagation();
+            const isOpen = dd.classList.contains('lb-open');
+            closeAll(dd);
+            if (!isOpen) {
+              dd.classList.add('lb-open');
+            }
           }
-        }
-      });
+        });
+      }
     });
 
     // Auto-close mobile menu when tapping any link inside it
@@ -355,6 +367,8 @@
         closeAll(null);
       }
     });
+
+    window.addEventListener('pageshow', resetMobileHeaderState);
   })();
 </script>
 
@@ -974,4 +988,4 @@
       height: 40px !important;
     }
   }
-</style> 
+</style>
