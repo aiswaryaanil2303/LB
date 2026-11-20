@@ -248,7 +248,7 @@
   </div>
 </div>
 
-<!-- HERO SLIDER & NAVBAR OFFSET SCRIPT -->
+<!-- HERO SLIDER & VIEWPORT FIT SCRIPT -->
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const fixedNav = document.getElementById('lbFixedHeader');
@@ -257,10 +257,10 @@
 
     function keepHeroBelowNavbar() {
       if (fixedNav && heroSection) {
-        const navHeight = fixedNav.offsetHeight;
-        heroSection.style.marginTop = navHeight + 'px';
+        heroSection.style.setProperty('margin-top', '0px', 'important');
 
         if (window.innerWidth >= 992) {
+          const navHeight = fixedNav.offsetHeight;
           const stripHeight = highlightsStrip ? highlightsStrip.offsetHeight : 0;
           const heroHeight = window.innerHeight - navHeight - stripHeight;
           if (heroHeight > 380) {
@@ -295,6 +295,16 @@
 </script>
 
 <style>
+  /* Remove any old margin/padding from style.css above hero */
+  body,
+  .overflow-hidden,
+  #myTabContent,
+  #home-tab-pane,
+  #heroSliderSection {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
   /* Hero Slider Section */
   .hero-slider-section {
     width: 100%;
