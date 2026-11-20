@@ -207,7 +207,7 @@
         });
       }
 
-      cards.forEach((card, idx) => {
+     cards.forEach((card, idx) => {
         card.addEventListener('click', (e) => {
           if (idx !== activeIndex) {
             e.preventDefault();
@@ -215,11 +215,9 @@
             restartAuto();
           }
         });
+        card.addEventListener('mouseenter', stopAuto);
+        card.addEventListener('mouseleave', startAuto);
       });
-
-      wrap.addEventListener('mouseenter', stopAuto);
-      wrap.addEventListener('mouseleave', startAuto);
-
       document.addEventListener('visibilitychange', () => {
         if (document.hidden) {
           stopAuto();
