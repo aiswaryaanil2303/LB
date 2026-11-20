@@ -1,451 +1,265 @@
 {% extends 'base.html' %}
-{% block title %}
-Services | L B Certifications Pvt. Ltd
-{% endblock %}
+{% block title %}Services | L B Certifications Pvt. Ltd{% endblock %}
 
 {% block content %}
 <link rel="stylesheet" href="/static/css/service.css">
 
-<style>
-  .badge {
-    background-color: rgb(56, 56, 255);
-    color: white;
-  }
+<!-- OUR SERVICES (3x3 Grid Layout Matching Reference) -->
+<section class="lb-srv-grid-section" id="lbServicesSection">
+  <div class="container">
 
-  .badge:hover {
-    background-color: rgb(0, 0, 109);
-    color: white;
-  }
-</style>
+    <!-- Centered Heading -->
+    <div class="text-center mb-4">
+      <h1 class="lb-srv-section-title">Our Services</h1>
+      <p class="lb-srv-section-subtitle">
+        Specialist inspection, engineering and training solutions for safer, stronger industrial operations
+      </p>
+    </div>
 
+    <!-- 3x3 Card Grid -->
+    <div class="row g-4">
 
-
-
-
-
-
-<section class="travel-banner">
-
-  <div class="banner-overlay"></div>
-
-  <div class="container-fluid banner-container">
-    <div class="row h-100 align-items-center">
-
-      <!-- LEFT CONTENT -->
-      <div class="col-12 col-lg-6 banner-content">
-
-        <div class="banner-location">
-          <span class="location-line"></span>
-          Sierra Nevada · USA
-        </div>
-
-        <h1 class="banner-title">
-          YOSEMITE<br>
-          NATIONAL PARK
-        </h1>
-
-        <p class="banner-description">
-          Yosemite National Park is a showcase of the
-          American wilderness, renowned for its towering
-          granite cliffs, majestic waterfalls, giant sequoias,
-          and stunning valleys. Explore unforgettable
-          landscapes and enjoy outdoor adventures, from
-          rock climbing to scenic walks.
-        </p>
-
-        <a href="#destinations" class="learn-more">
-          <span class="learn-icon">i</span>
-          <span class="learn-button">Learn more</span>
+      <!-- 01 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <a href="/contact" class="lb-srv-ref-card">
+          <img src="/static/images/staticimagesservice-inspection.jpg" alt="Inspection & Asset Integrity Services">
+          <div class="lb-srv-ref-overlay"></div>
+          <div class="lb-srv-ref-content">
+            <span class="lb-srv-ref-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+            <h3>Inspection &amp; Asset<br>Integrity Services</h3>
+          </div>
         </a>
-
       </div>
 
-      <!-- RIGHT DESTINATION CARDS -->
-      <div class="col-12 col-lg-6 banner-destinations" id="destinations">
-
-        <div class="destination-card card-one">
-          <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=500&q=85"
-            alt="Wildlife in a mountain landscape">
-          <div class="destination-info">
-            <small>Los Angeles</small>
-            <h3>BEACH</h3>
+      <!-- 02 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <a href="/contact" class="lb-srv-ref-card">
+          <img src="/static/images/02_Health_Safety_and_Environment_Trainings.png" alt="Health, Safety & Environment Trainings">
+          <div class="lb-srv-ref-overlay"></div>
+          <div class="lb-srv-ref-content">
+            <span class="lb-srv-ref-icon"><i class="fa-solid fa-shield-halved"></i></span>
+            <h3>Health, Safety &amp;<br>Environment Trainings</h3>
           </div>
-        </div>
-
-        <div class="destination-card card-two">
-          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=500&q=85"
-            alt="Mountain valley">
-          <div class="destination-info">
-            <small>Cappadocia · Turkey</small>
-            <h3>Göreme<br>Valley</h3>
-          </div>
-        </div>
-
-        <div class="destination-card card-three">
-          <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=500&q=85"
-            alt="Green alpine landscape">
-          <div class="destination-info">
-            <small>Switzerland Alps</small>
-            <h3>SAINT<br>ANTONIO</h3>
-          </div>
-        </div>
-
-        <div class="destination-card card-four">
-          <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=500&q=85"
-            alt="Architectural destination">
-          <div class="destination-info">
-            <small>Japan Alps</small>
-            <h3>NAGANO<br>PREFECTURE</h3>
-          </div>
-        </div>
-
+        </a>
       </div>
+
+      <!-- 03 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <a href="/contact" class="lb-srv-ref-card">
+          <img src="/static/images/03_Asset_Integrity_Training_Services.png" alt="Asset Integrity Training Services">
+          <div class="lb-srv-ref-overlay"></div>
+          <div class="lb-srv-ref-content">
+            <span class="lb-srv-ref-icon"><i class="fa-solid fa-circle-check"></i></span>
+            <h3>Asset Integrity<br>Training Services</h3>
+          </div>
+        </a>
+      </div>
+
+      <!-- 04 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <a href="/contact" class="lb-srv-ref-card">
+          <img src="/static/images/04_Workforce_Competency_Assurance_Services.png" alt="Workforce Competency Assurance Services">
+          <div class="lb-srv-ref-overlay"></div>
+          <div class="lb-srv-ref-content">
+            <span class="lb-srv-ref-icon"><i class="fa-solid fa-award"></i></span>
+            <h3>Workforce Competency<br>Assurance Services</h3>
+          </div>
+        </a>
+      </div>
+
+      <!-- 05 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <a href="/contact" class="lb-srv-ref-card">
+          <img src="/static/images/05_Onboard_Training.png" alt="Onboard Training">
+          <div class="lb-srv-ref-overlay"></div>
+          <div class="lb-srv-ref-content">
+            <span class="lb-srv-ref-icon"><i class="fa-solid fa-ship"></i></span>
+            <h3>Onboard Training</h3>
+          </div>
+        </a>
+      </div>
+
+      <!-- 06 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <a href="/contact" class="lb-srv-ref-card">
+          <img src="/static/images/06_Engineering_Consultancy_and_Technical_Certification.png" alt="Engineering Consultancy & Technical Certification">
+          <div class="lb-srv-ref-overlay"></div>
+          <div class="lb-srv-ref-content">
+            <span class="lb-srv-ref-icon"><i class="fa-solid fa-file-circle-check"></i></span>
+            <h3>Engineering Consultancy<br>&amp; Technical Certification</h3>
+          </div>
+        </a>
+      </div>
+
+      <!-- 07 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <a href="/contact" class="lb-srv-ref-card">
+          <img src="/static/images/07_Soft_Skills_and_Human_Performance_Training.png" alt="Soft Skills & Human Performance Training">
+          <div class="lb-srv-ref-overlay"></div>
+          <div class="lb-srv-ref-content">
+            <span class="lb-srv-ref-icon"><i class="fa-solid fa-users"></i></span>
+            <h3>Soft Skills &amp; Human<br>Performance Training</h3>
+          </div>
+        </a>
+      </div>
+
+      <!-- 08 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <a href="/contact" class="lb-srv-ref-card">
+          <img src="/static/images/08_Online_Training_Services.png" alt="Online Training Services">
+          <div class="lb-srv-ref-overlay"></div>
+          <div class="lb-srv-ref-content">
+            <span class="lb-srv-ref-icon"><i class="fa-solid fa-laptop"></i></span>
+            <h3>Online Training Services</h3>
+          </div>
+        </a>
+      </div>
+
+      <!-- 09 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <a href="/contact" class="lb-srv-ref-card">
+          <img src="/static/images/09_AI_Integration_Services.png" alt="AI Integration Services">
+          <div class="lb-srv-ref-overlay"></div>
+          <div class="lb-srv-ref-content">
+            <span class="lb-srv-ref-icon"><i class="fa-solid fa-microchip"></i></span>
+            <h3>AI Integration Services</h3>
+          </div>
+        </a>
+      </div>
+
     </div>
   </div>
-
 </section>
 
+<script>
+  (function () {
+    const fixedNav = document.getElementById('lbFixedHeader');
+    const srvSection = document.getElementById('lbServicesSection');
+
+    function offsetServicesSection() {
+      if (fixedNav && srvSection) {
+        srvSection.style.marginTop = fixedNav.offsetHeight + 'px';
+      }
+    }
+    offsetServicesSection();
+    window.addEventListener('load', offsetServicesSection);
+    window.addEventListener('resize', offsetServicesSection);
+  })();
+</script>
+
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  /* ================= OUR SERVICES (3x3 REFERENCE GRID) ================= */
+  .lb-srv-grid-section {
+    font-family: 'Manrope', sans-serif;
+    background-color: #F4F7FA;
+    padding: 56px 0 64px;
   }
 
-  body {
-    font-family: "Roboto Condensed", sans-serif;
-    background: #111;
-  }
-
-  .travel-banner {
-    position: relative;
-    min-height: 520px;
-    height: 85vh;
-    max-height: 760px;
-    overflow: hidden;
-    color: #fff;
-
-    background-image: url("https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=2000&q=90"
-      );
-
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-
-  /* Dark gradient to keep text readable */
-  .banner-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg,
-        rgba(0, 0, 0, 0.75) 0%,
-        rgba(0, 0, 0, 0.42) 38%,
-        rgba(0, 0, 0, 0.05) 75%);
-  }
-
-  .banner-container {
-    position: relative;
-    z-index: 2;
-    height: 100%;
-    padding: 45px 4%;
-  }
-
-  .banner-content {
-    position: relative;
-    z-index: 3;
-    padding-right: 45px;
-  }
-
-  .banner-location {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 18px;
-
-    font-size: 13px;
-    font-weight: 400;
-    letter-spacing: 0.5px;
-    color: rgba(255, 255, 255, 0.85);
-  }
-
-  .location-line {
-    width: 22px;
-    height: 2px;
-    background: #fff;
-    display: inline-block;
-  }
-
-  .banner-title {
-    font-size: clamp(36px, 4.2vw, 68px);
-    line-height: 1.03;
+  .lb-srv-section-title {
+    font-size: clamp(28px, 2.8vw, 36px);
     font-weight: 800;
-    letter-spacing: -1px;
-    margin-bottom: 22px;
-    text-transform: uppercase;
+    color: #0A2E46;
+    margin-bottom: 8px;
   }
 
-  .banner-description {
-    max-width: 400px;
-    font-size: 13px;
-    line-height: 1.6;
-    font-weight: 400;
-    color: rgba(255, 255, 255, 0.88);
-    margin-bottom: 25px;
+  .lb-srv-section-subtitle {
+    font-size: 14px;
+    color: #5C7282;
+    max-width: 640px;
+    margin: 0 auto 32px;
   }
 
-  .learn-more {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-  }
-
-  .learn-icon {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: #f5bd36;
-    color: #fff;
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 17px;
-    font-weight: 700;
-  }
-
-  .learn-button {
-    padding: 7px 22px;
-    border-radius: 20px;
-    background: #fff;
-    color: #333;
-
-    font-size: 12px;
-    font-weight: 700;
-    transition: all 0.3s ease;
-  }
-
-  .learn-more:hover .learn-button {
-    background: #f5bd36;
-    color: #111;
-  }
-
-  /* Destination cards */
-  .banner-destinations {
-    position: absolute;
-    right: 4%;
-    bottom: 0;
-    height: 48%;
-    display: flex;
-    align-items: stretch;
-    justify-content: flex-end;
-    gap: 12px;
-    padding: 0;
-  }
-
-  .destination-card {
+  .lb-srv-ref-card {
     position: relative;
-    flex: 1 1 0;
-    min-width: 0;
+    display: block;
+    height: 195px;
+    border-radius: 14px;
     overflow: hidden;
-    border-radius: 10px 10px 0 0;
-    background: #222;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    text-decoration: none;
+    background-color: #0A2E46;
+    box-shadow: 0 8px 22px rgba(10, 46, 70, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
-  .destination-card img {
+  .lb-srv-ref-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 32px rgba(10, 46, 70, 0.22);
+  }
+
+  .lb-srv-ref-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: right center;
     display: block;
-    transition: transform 0.5s ease;
+    transition: transform 0.45s ease;
   }
 
-  .destination-card:hover img {
-    transform: scale(1.08);
+  .lb-srv-ref-card:hover img {
+    transform: scale(1.06);
   }
 
-  .destination-card::after {
-    content: "";
+  .lb-srv-ref-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top,
-        rgba(0, 0, 0, 0.85),
-        transparent 65%);
-  }
-
-  .destination-info {
-    position: absolute;
+    background: linear-gradient(
+      90deg,
+      rgba(10, 46, 70, 0.94) 0%,
+      rgba(10, 46, 70, 0.78) 46%,
+      rgba(10, 46, 70, 0.12) 100%
+    );
     z-index: 1;
-    left: 12px;
-    right: 8px;
-    bottom: 14px;
   }
 
-  .destination-info small {
-    display: block;
-    font-size: 10px;
-    line-height: 1.4;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 4px;
+  .lb-srv-ref-content {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 22px;
   }
 
-  .destination-info h3 {
-    font-size: 14px;
-    line-height: 1.1;
-    font-weight: 800;
+  .lb-srv-ref-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255, 255, 255, 0.75);
+    background: rgba(10, 46, 70, 0.45);
+    color: #FFFFFF;
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+  }
+
+  .lb-srv-ref-card:hover .lb-srv-ref-icon {
+    background-color: #6AD053;
+    border-color: #6AD053;
+    color: #0A2E46;
+  }
+
+  .lb-srv-ref-content h3 {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.32;
+    color: #FFFFFF;
     margin: 0;
-    color: #fff;
-  }
-
-  /* Tablet */
-  @media (max-width: 991.98px) {
-    .travel-banner {
-      height: auto;
-      min-height: 680px;
-      max-height: none;
-      background-position: center;
-    }
-
-    .banner-container {
-      padding: 60px 5% 0;
-    }
-
-    .banner-content {
-      padding-right: 15px;
-      padding-bottom: 35px;
-    }
-
-    .banner-title {
-      font-size: clamp(38px, 6vw, 56px);
-    }
-
-    .banner-description {
-      max-width: 480px;
-    }
-
-    .banner-destinations {
-      position: relative;
-      right: auto;
-      bottom: auto;
-      height: 230px;
-      width: 100%;
-      margin-top: 5px;
-      gap: 10px;
-    }
-
-    .destination-info {
-      left: 8px;
-      bottom: 10px;
-    }
-
-    .destination-info h3 {
-      font-size: 12px;
-    }
-  }
-
-  /* Mobile */
-  @media (max-width: 575.98px) {
-    .travel-banner {
-      min-height: 0;
-      height: auto;
-      background-position: center;
-    }
-
-    .banner-overlay {
-      background: linear-gradient(180deg,
-          rgba(0, 0, 0, 0.55),
-          rgba(0, 0, 0, 0.7));
-    }
-
-    .banner-container {
-      padding: 55px 22px 0;
-    }
-
-    .banner-content {
-      padding: 0 0 30px;
-    }
-
-    .banner-location {
-      font-size: 12px;
-      margin-bottom: 15px;
-    }
-
-    .banner-title {
-      font-size: clamp(34px, 9vw, 44px);
-      line-height: 1.05;
-      letter-spacing: -0.5px;
-      margin-bottom: 16px;
-    }
-
-    .banner-description {
-      max-width: 100%;
-      font-size: 12px;
-      line-height: 1.7;
-      margin-bottom: 20px;
-    }
-
-    .banner-destinations {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      height: auto;
-      gap: 12px;
-      padding-bottom: 20px;
-    }
-
-    .destination-card {
-      height: 190px;
-      border-radius: 8px;
-    }
-
-    .destination-info {
-      left: 10px;
-      right: 6px;
-      bottom: 12px;
-    }
-
-    .destination-info small {
-      font-size: 10px;
-    }
-
-    .destination-info h3 {
-      font-size: 13px;
-    }
-  }
-
-  /* Very small phones */
-  @media (max-width: 360px) {
-    .banner-container {
-      padding-left: 16px;
-      padding-right: 16px;
-    }
-
-    .banner-title {
-      font-size: 32px;
-    }
-
-    .destination-card {
-      height: 155px;
-    }
   }
 </style>
-
-
-
-
 
 <!-- Why Choose Us Section -->
 <section class="mt-5 py-5" style="background-color: #f8f9fa;">
   <div class="container">
     <div class="text-center mb-5">
-      <h2 class="fw-bold" style="color: #0C334A;">Why Choose <span style="color: #75D457">Our Services</span></h2>
-      <p class="text-muted">We deliver excellence through our comprehensive range of services backed by years of
-        industry expertise.</p>
+      <h2 class="fw-bold" style="color: #0C334A;">Why Choose <span style="color: #6AD053">Our Services</span></h2>
+      <p class="text-muted">We deliver excellence through our comprehensive range of services backed by years of industry expertise.</p>
     </div>
 
     <div class="row g-4">
-      <!-- Feature 1 -->
       <div class="col-md-6 col-lg-3">
         <div class="card border-0 shadow-sm h-100">
           <div class="card-body text-center">
@@ -456,7 +270,6 @@ Services | L B Certifications Pvt. Ltd
         </div>
       </div>
 
-      <!-- Feature 2 -->
       <div class="col-md-6 col-lg-3">
         <div class="card border-0 shadow-sm h-100">
           <div class="card-body text-center">
@@ -467,7 +280,6 @@ Services | L B Certifications Pvt. Ltd
         </div>
       </div>
 
-      <!-- Feature 3 -->
       <div class="col-md-6 col-lg-3">
         <div class="card border-0 shadow-sm h-100">
           <div class="card-body text-center">
@@ -478,7 +290,6 @@ Services | L B Certifications Pvt. Ltd
         </div>
       </div>
 
-      <!-- Feature 4 -->
       <div class="col-md-6 col-lg-3">
         <div class="card border-0 shadow-sm h-100">
           <div class="card-body text-center">
@@ -492,92 +303,59 @@ Services | L B Certifications Pvt. Ltd
   </div>
 </section>
 
+<!-- Quality Statement Section -->
 <section class="quality-section py-5">
   <div class="container-fluid px-5">
     <div class="row align-items-center">
-
-      <!-- LEFT SIDE IMAGE -->
       <div class="col-md-5 mb-4 mb-md-0" data-aos="flip-right">
         <img
           src="https://plus.unsplash.com/premium_photo-1661962457945-5c1aabee6df4?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZmlyZSUyMHNhZmV0eXxlbnwwfHwwfHx8MA%3D%3D"
-          class="img-fluid rounded shadow-lg left-quality-img">
+          class="img-fluid rounded shadow-lg left-quality-img" alt="Quality Statement">
       </div>
 
-      <!-- RIGHT TEXT -->
       <div class="col-md-7 text-white ps-md-5 position-relative">
-
-        <!-- QUOTE BACKGROUND -->
-        <img src="/static/images/double-quotes.png" class="quote-bg">
-
+        <img src="/static/images/double-quotes.png" class="quote-bg" alt="">
         <h2 class="fw-bold mb-4 animate-bold" id="qualityTitle">Our Quality Statement</h2>
 
-
-
-        <!-- animation css and script  -->
         <style>
-          .animate-bold span {
-            font-weight: 400;
-            opacity: 0.6;
-            transition: all 0.3s ease;
-          }
-
-          /* When it animates to bold */
-          .animate-bold span.bold {
-            font-weight: 700;
-            opacity: 1;
-          }
+          .animate-bold span { font-weight: 400; opacity: 0.6; transition: all 0.3s ease; }
+          .animate-bold span.bold { font-weight: 700; opacity: 1; }
         </style>
 
         <script>
           document.addEventListener("DOMContentLoaded", () => {
             const title = document.getElementById("qualityTitle");
             const text = title.innerText;
-
-            // Wrap characters in spans ONLY once
-            title.innerHTML = text
-              .split("")
-              .map(char => `<span>${char}</span>`)
-              .join("");
-
+            title.innerHTML = text.split("").map(char => `<span>${char}</span>`).join("");
             const letters = title.querySelectorAll("span");
 
             function animateLetters() {
               letters.forEach((letter, index) => {
-                setTimeout(() => {
-                  letter.classList.add("bold");
-                }, index * 80);
+                setTimeout(() => letter.classList.add("bold"), index * 80);
               });
-
-              // After animation completes, reset and restart
               setTimeout(() => {
                 letters.forEach(letter => letter.classList.remove("bold"));
-                animateLetters();  // Loop again
-              }, letters.length * 80 + 500); // small pause
+                animateLetters();
+              }, letters.length * 80 + 500);
             }
-
-            animateLetters(); // Start animation
+            animateLetters();
           });
         </script>
 
-
-
         <p class="quality-text text-justify">
-          “At HALEYS, we set the standard for excellence in every facet of our operations.
+          “At LLOYDS BUREAU, we set the standard for excellence in every facet of our operations.
           We are dedicated to continuous improvement, utilizing cutting-edge technology,
           and adhering to the highest industry standards. Our unwavering commitment to
-          quality drives us to deliver precision-engineered steel structures and a comprehensive
+          quality drives us to deliver precision-engineered solutions and a comprehensive
           range of services, including structural design analysis, inspection, testing, repair,
-          and rental, all supported by competent resources and well-defined practices.
+          and training, all supported by competent resources and well-defined practices.
           Our pursuit of excellence ensures the safety, satisfaction, and success of our valued
           clients, as we forge a sustainable future together.”
         </p>
-
       </div>
-
     </div>
   </div>
 </section>
-
 
 <!-- Roles section -->
 <div class="container py-5">
@@ -597,57 +375,48 @@ Services | L B Certifications Pvt. Ltd
         <p class="role-text">Roustabout</p>
       </div>
     </div>
-
     <div class="col-12 col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="90">
       <div class="role-card h-100">
         <div class="role-icon-wrap"><i class="fa-solid fa-person-hiking role-icon" aria-hidden="true"></i></div>
         <p class="role-text">Rigger</p>
       </div>
     </div>
-
-    <!-- Offshore Crane Operator: changed to a clearer icon (warehouse/crane alternative) -->
     <div class="col-12 col-md-6 col-lg-4" data-aos="flip-down" data-aos-delay="120">
       <div class="role-card h-100">
         <div class="role-icon-wrap"><i class="fa-solid fa-industry role-icon" aria-hidden="true"></i></div>
         <p class="role-text">Offshore Crane Operator</p>
       </div>
     </div>
-
     <div class="col-12 col-md-6 col-lg-4" data-aos="flip-up" data-aos-delay="150">
       <div class="role-card h-100">
         <div class="role-icon-wrap"><i class="fa-solid fa-screwdriver-wrench role-icon" aria-hidden="true"></i></div>
         <p class="role-text">Bolt Technician</p>
       </div>
     </div>
-
     <div class="col-12 col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="180">
       <div class="role-card h-100">
         <div class="role-icon-wrap"><i class="fa-solid fa-tower-cell role-icon" aria-hidden="true"></i></div>
         <p class="role-text">Scaffolder</p>
       </div>
     </div>
-
     <div class="col-12 col-md-6 col-lg-4" data-aos="flip-down" data-aos-delay="210">
       <div class="role-card h-100">
         <div class="role-icon-wrap"><i class="fa-solid fa-user-shield role-icon" aria-hidden="true"></i></div>
         <p class="role-text">Health and Safety Officer</p>
       </div>
     </div>
-
     <div class="col-12 col-md-6 col-lg-4" data-aos="flip-up" data-aos-delay="240">
       <div class="role-card h-100">
         <div class="role-icon-wrap"><i class="fa-solid fa-microchip role-icon" aria-hidden="true"></i></div>
         <p class="role-text">Instrumentation Technician</p>
       </div>
     </div>
-
     <div class="col-12 col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="270">
       <div class="role-card h-100">
         <div class="role-icon-wrap"><i class="fa-solid fa-wind role-icon" aria-hidden="true"></i></div>
         <p class="role-text">Wind Turbine Technician</p>
       </div>
     </div>
-
     <div class="col-12 col-md-6 col-lg-4" data-aos="flip-down" data-aos-delay="300">
       <div class="role-card h-100">
         <div class="role-icon-wrap"><i class="fa-solid fa-person-falling role-icon" aria-hidden="true"></i></div>
@@ -657,178 +426,21 @@ Services | L B Certifications Pvt. Ltd
   </div>
 </div>
 
-
-<!-- Styles -->
 <style>
-  /* Page background */
-  body {
-    background-color: #f8fbff;
-  }
-
-  .btn.enrollBtn1:hover {
-    background: rgba(0, 106, 255, 0.8);
-    color: #ffffff;
-  }
-
-  /* Hero */
-  .hero-card {
-    position: relative;
-  }
-
-  .gradient-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(12, 51, 74, 0.45) 0%, rgba(117, 213, 71, 0.06) 80%);
-    pointer-events: none;
-  }
-
-  .hero-caption {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-    z-index: 2;
-    padding: 1.5rem;
-  }
-
-  .hero-title {
-    font-size: clamp(1.5rem, 1rem + 3.5vw, 3.2rem);
-    letter-spacing: .015em;
-  }
-
-  /* Section Title */
-  .section-title {
-    font-size: clamp(1.75rem, 0.8571rem + 2.8571vw, 2.6rem);
-    font-weight: 700;
-  }
-
-  .section-subtitle {
-    font-size: clamp(0.9rem, 0.5rem + 1vw, 1.05rem);
-    color: #586573;
-  }
-
-  /* Course cards */
-  .course-card {
-    border-radius: 15px;
-    background: #fff;
-    box-shadow: 0 6px 18px rgba(6, 24, 42, 0.06);
-    text-align: center;
-    padding: 28px 18px;
-    transition: transform .35s cubic-bezier(.2, .9, .3, 1), box-shadow .35s, background-color .25s;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-bottom: 4px solid transparent;
-  }
-
-  .course-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 18px 40px rgba(7, 26, 58, 0.12);
-    border-bottom-color: #75D547;
-    background-color: #ecf9ea;
-    /* light green background on hover */
-  }
-
-  .course-card .img-wrap {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    min-height: 110px;
-  }
-
-  .course-card img {
-    max-height: 120px;
-    width: auto;
-    object-fit: contain;
-    display: block;
-  }
-
-  .course-title {
-    color: #0C334A;
-    font-weight: 700;
-    font-size: 1.02rem;
-    margin-top: 12px;
-  }
-
-  /* Role cards */
+  body { background-color: #f8fbff; }
+  .section-title { font-size: clamp(1.75rem, 0.8571rem + 2.8571vw, 2.6rem); font-weight: 700; }
+  .section-subtitle { font-size: clamp(0.9rem, 0.5rem + 1vw, 1.05rem); color: #586573; }
   .role-card {
-    background-color: #fff;
-    border-radius: 15px;
-    box-shadow: 0 6px 18px rgba(6, 24, 42, 0.06);
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    gap: 18px;
+    background-color: #fff; border-radius: 15px; box-shadow: 0 6px 18px rgba(6, 24, 42, 0.06);
+    padding: 20px; display: flex; align-items: center; gap: 18px;
     transition: transform .28s ease, box-shadow .28s ease, border-left-color .28s ease, background-color .28s ease;
-    height: 100%;
-    border-left: 6px solid rgba(26, 158, 219, 0);
+    height: 100%; border-left: 6px solid rgba(26, 158, 219, 0);
   }
-
-  .role-card:hover {
-    transform: translateX(6px);
-    box-shadow: 0 20px 36px rgba(7, 26, 58, 0.10);
-    border-left-color: #75D547;
-    background-color: #fbfffb;
-  }
-
-  .role-icon-wrap {
-    width: 60px;
-    height: 60px;
-    border-radius: 12px;
-    display: grid;
-    place-items: center;
-    background: linear-gradient(180deg, rgba(26, 158, 219, 0.08), rgba(117, 213, 71, 0.03));
-  }
-
-  .role-icon {
-    color: #0C334A;
-    font-size: 1.5rem;
-  }
-
-  .role-text {
-    color: #0C334A;
-    font-weight: 700;
-    font-size: 1.02rem;
-    margin: 0;
-  }
-
-  /* CTA */
-  .enrollBtn1 {
-    background-color: #75D547;
-    color: #0C334A;
-    border: 1px solid #0C334A;
-    font-weight: 700;
-    padding: 12px 28px;
-    border-radius: 0.6rem;
-    transition: transform .18s ease, box-shadow .18s ease;
-  }
-
-  .enrollBtn1:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 26px rgba(22, 92, 22, 0.08);
-  }
-
-  /* Responsive tweaks */
-  @media (max-width: 768px) {
-    .hero-caption {
-      padding: 1rem;
-    }
-
-    .hero-title {
-      font-size: 1.8rem;
-    }
-
-    .course-card .img-wrap {
-      min-height: 90px;
-    }
-  }
+  .role-card:hover { transform: translateX(6px); box-shadow: 0 20px 36px rgba(7, 26, 58, 0.10); border-left-color: #75D547; background-color: #fbfffb; }
+  .role-icon-wrap { width: 60px; height: 60px; border-radius: 12px; display: grid; place-items: center; background: linear-gradient(180deg, rgba(26, 158, 219, 0.08), rgba(117, 213, 71, 0.03)); }
+  .role-icon { color: #0C334A; font-size: 1.5rem; }
+  .role-text { color: #0C334A; font-weight: 700; font-size: 1.02rem; margin: 0; }
 </style>
-
 
 <!-- Call to Action Section -->
 <section class="mt-5 mb-5">
@@ -840,7 +452,9 @@ Services | L B Certifications Pvt. Ltd
           <p class="mb-0 text-muted">Contact us today to discuss your certification needs and how we can help.</p>
         </div>
         <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
-          <a href="/contact" class="btn btn-primary px-4 py-2">Contact Us</a>
+          <a href="/contact" class="btn btn-primary px-4 py-2 lb-arrow-btn">
+            Contact Us <i class="fa-solid fa-arrow-right ms-1"></i>
+          </a>
         </div>
       </div>
     </div>

@@ -29,6 +29,47 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="static/css/style.css">
+
+    <style>
+      /* Larger Floating WhatsApp & Call Buttons */
+      .fixed-buttons {
+        gap: 14px !important;
+      }
+
+      .fixed-buttons .btn-whatsapp-pulse,
+      .fixed-buttons .call-button,
+      .fixed-buttons .whatsapp-button {
+        width: 68px !important;
+        height: 68px !important;
+        font-size: 34px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+
+      .fixed-buttons .btn-whatsapp-pulse i,
+      .fixed-buttons .call-button i,
+      .fixed-buttons .whatsapp-button i {
+        font-size: 34px !important;
+        line-height: 1 !important;
+      }
+
+      @media (max-width: 576px) {
+        .fixed-buttons .btn-whatsapp-pulse,
+        .fixed-buttons .call-button,
+        .fixed-buttons .whatsapp-button {
+          width: 58px !important;
+          height: 58px !important;
+          font-size: 28px !important;
+        }
+
+        .fixed-buttons .btn-whatsapp-pulse i,
+        .fixed-buttons .call-button i,
+        .fixed-buttons .whatsapp-button i {
+          font-size: 28px !important;
+        }
+      }
+    </style>
 </head>
 
 <body class="{% block body_class %}{% endblock %}">

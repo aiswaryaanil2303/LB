@@ -390,6 +390,7 @@
     text-align: left !important;
   }
 
+  /* Explore Services: Green by default -> View Training color on hover */
   .hero-btn-primary {
     background-color: #5EC84A !important;
     color: #FFFFFF !important;
@@ -397,13 +398,15 @@
     font-size: 15px;
     padding: 12px 26px;
     border-radius: 10px;
-    border: none;
+    border: 1.5px solid #5EC84A;
     width: auto !important;
+    transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
   }
 
   .hero-btn-primary:hover {
-    background-color: #49B236 !important;
+    background-color: rgba(10, 46, 70, 0.48) !important;
     color: #FFFFFF !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.78) !important;
   }
 
   .hero-btn-outline {
@@ -415,6 +418,7 @@
     border-radius: 10px;
     border: 1.5px solid rgba(255, 255, 255, 0.78);
     width: auto !important;
+    transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
   }
 
   .hero-btn-outline:hover {
@@ -422,7 +426,7 @@
     color: #FFFFFF !important;
   }
 
-  /* 4-Column White Highlights Strip */
+  /* 4-Column White Highlights Strip with Hover Zoom Effect */
   .hero-highlights-strip {
     border-bottom: 1px solid #E5ECF1;
     padding: 24px 0;
@@ -440,6 +444,16 @@
     display: flex;
     align-items: center;
     gap: 14px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.28s ease, background-color 0.28s ease, box-shadow 0.28s ease;
+  }
+
+  .highlight-item:hover {
+    transform: scale(1.06) translateY(-2px);
+    background-color: #F4F8FB;
+    box-shadow: 0 8px 20px rgba(10, 46, 70, 0.08);
   }
 
   .highlight-icon {
@@ -447,6 +461,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: transform 0.28s ease;
+  }
+
+  .highlight-item:hover .highlight-icon {
+    transform: scale(1.1);
   }
 
   .icon-green {

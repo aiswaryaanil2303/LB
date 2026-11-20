@@ -264,9 +264,9 @@
 
       <!-- Left Links -->
       <div class="d-flex flex-wrap align-items-center who-links-group">
-        <span class="who-title d-flex align-items-center gap-2">
+        <a href="#" class="who-title-btn d-flex align-items-center gap-2">
           <i class="fa-solid fa-users"></i> Who We Serve
-        </span>
+        </a>
         <span class="who-divider d-none d-sm-inline">|</span>
         <a href="#" class="who-link d-flex align-items-center gap-2">
           <i class="fa-regular fa-user"></i> Individuals
@@ -279,9 +279,14 @@
         </a>
       </div>
 
-      <!-- Right Search Box -->
-      <form action="/search" method="GET" class="mb-0 who-search-form">
-        <input type="text" name="q" class="form-control who-search-input" placeholder="Search.....">
+      <!-- Right Search Box with Lens Icon -->
+      <form action="/search" method="GET" class="mb-0 ms-md-auto who-search-form">
+        <div class="who-search-wrap">
+          <input type="text" name="q" class="form-control who-search-input" placeholder="Search.....">
+          <button type="submit" class="who-search-btn" aria-label="Search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
       </form>
 
     </div>
@@ -803,12 +808,26 @@
   }
 
   .who-links-group {
-    gap: 42px;
+    gap: 32px;
   }
 
-  .who-title {
-    color: #4EB838;
+  /* Who We Serve: Clean Text Link (No Container) with Hover Effect */
+  .who-title-btn {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    color: hsl(211, 74%, 23%) !important;
     font-weight: 700;
+    text-decoration: none;
+    text-shadow: 0 1px 2px rgba(10, 46, 70, 0.28);
+    transition: color 0.25s ease, text-shadow 0.25s ease;
+  }
+
+  .who-title-btn:hover {
+    color: #4EB838 !important;
+    text-shadow: none;
   }
 
   .who-divider {
@@ -819,21 +838,57 @@
     color: #0A2E46 !important;
     text-decoration: none;
     font-weight: 500;
+    transition: color 0.2s ease;
   }
 
   .who-link:hover {
     color: #4EB838 !important;
   }
 
+  /* Search Box with Lens Icon */
+  .who-search-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 225px;
+  }
+
   .who-search-input {
-    width: 215px;
-    height: 30px !important;
-    min-height: 30px !important;
-    border-radius: 5px;
+    width: 100%;
+    height: 32px !important;
+    min-height: 32px !important;
+    border-radius: 6px;
     border: 1px solid #C9D7E2;
     font-size: 13px;
-    padding: 3px 10px !important;
+    padding: 3px 34px 3px 10px !important;
     background-color: #FFFFFF;
+    color: #0A2E46;
+  }
+
+  .who-search-input:focus {
+    border-color: #4EB838;
+    box-shadow: 0 0 0 2px rgba(78, 184, 56, 0.18);
+  }
+
+  .who-search-btn {
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    padding: 2px 6px;
+    color: #0A2E46;
+    font-size: 13px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease;
+  }
+
+  .who-search-btn:hover {
+    color: #4EB838;
   }
 
   .mobile-util-link {
@@ -841,12 +896,6 @@
     font-size: 13px;
     font-weight: 600;
     text-decoration: none;
-  }
-
-  @media (min-width: 1200px) {
-    .who-search-form {
-      margin-right: 220px;
-    }
   }
 
   /* MOBILE & TABLET RESPONSIVENESS */
@@ -899,6 +948,7 @@
     }
 
     .who-search-form,
+    .who-search-wrap,
     .who-search-input {
       width: 100%;
     }
