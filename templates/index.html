@@ -42,21 +42,21 @@
             and world-class training solutions across the energy and industrial sectors.
           </p>
           <div class="d-flex flex-wrap align-items-center gap-3 mt-4">
-            <a href="/services" class="btn hero-btn-primary d-inline-flex align-items-center gap-2">
+            <a href="/services" class="btn hero-btn-primary lb-hero-arrow-btn d-inline-flex align-items-center gap-2">
               <span>Explore Services</span>
-              <i class="fa-solid fa-arrow-right"></i>
+              <i class="fa-solid fa-arrow-right lb-btn-arrow"></i>
             </a>
-            <a href="/training-courses" class="btn hero-btn-outline d-inline-flex align-items-center gap-2">
+            <a href="/training-courses" class="btn hero-btn-outline lb-hero-arrow-btn d-inline-flex align-items-center gap-2">
               <span>View Training</span>
-              <i class="fa-solid fa-arrow-right"></i>
+              <i class="fa-solid fa-arrow-right lb-btn-arrow"></i>
             </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 4-COLUMN WHITE HIGHLIGHTS STRIP -->
-    <section class="hero-highlights-strip bg-white" id="heroHighlightsStrip">
+    <!-- 4-COLUMN LIGHT BLUE HIGHLIGHTS STRIP (Matches Top Bar, No Bottom Border) -->
+    <section class="hero-highlights-strip" id="heroHighlightsStrip">
       <div class="highlights-inner-container">
         <div class="row g-4 align-items-center">
 
@@ -414,6 +414,32 @@
     text-align: left !important;
   }
 
+  /* Hero CTA Button Animations */
+  .lb-hero-arrow-btn {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .lb-btn-arrow {
+    display: inline-block;
+    transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+    animation: lbHeroArrowPulse 2.4s ease-in-out infinite;
+  }
+
+  .lb-hero-arrow-btn:hover {
+    transform: translateY(-2px);
+  }
+
+  .lb-hero-arrow-btn:hover .lb-btn-arrow {
+    animation: none;
+    transform: translateX(5px);
+  }
+
+  @keyframes lbHeroArrowPulse {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(3px); }
+  }
+
   /* Explore Services: Green by default -> View Training color on hover */
   .hero-btn-primary {
     background-color: #5EC84A !important;
@@ -424,7 +450,7 @@
     border-radius: 10px;
     border: 1.5px solid #5EC84A;
     width: auto !important;
-    transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+    transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
   }
 
   .hero-btn-primary:hover {
@@ -442,7 +468,7 @@
     border-radius: 10px;
     border: 1.5px solid rgba(255, 255, 255, 0.78);
     width: auto !important;
-    transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+    transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
   }
 
   .hero-btn-outline:hover {
@@ -450,9 +476,10 @@
     color: #FFFFFF !important;
   }
 
-  /* 4-Column White Highlights Strip with Hover Zoom Effect */
+  /* 4-Column Light Blue Highlights Strip (Matches Top Bar, No Bottom Border) */
   .hero-highlights-strip {
-    border-bottom: 1px solid #E5ECF1;
+    background-color: #E5ECF1;
+    border-bottom: none !important;
     padding: 24px 0;
     width: 100%;
     font-family: 'Manrope', sans-serif;
