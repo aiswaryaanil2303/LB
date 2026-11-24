@@ -1695,50 +1695,83 @@
       height: 175px;
     }
 
+    /* Reset Our Locations Map & Pins on Mobile/Tablet so no green overlay covers the map */
     #our-locations .map-container {
-      overflow: hidden !important;
+      overflow: visible !important;
+      background: transparent !important;
+      background-image: none !important;
+    }
+
+    #our-locations .map-container::before,
+    #our-locations .map-container::after,
+    #our-locations .pin::before,
+    #our-locations .pin::after,
+    #our-locations .pin span::before,
+    #our-locations .pin span::after {
+      display: none !important;
+      content: none !important;
     }
 
     #our-locations .pin,
-    #our-locations .pin * {
+    #our-locations .pin span,
+    #our-locations .pin div {
       position: static !important;
       left: auto !important;
       right: auto !important;
       top: auto !important;
       bottom: auto !important;
       transform: none !important;
-      max-width: 100% !important;
       width: 100% !important;
-      box-sizing: border-box !important;
+      max-width: 100% !important;
+      height: auto !important;
+      background: #FFFFFF !important;
+      background-color: #FFFFFF !important;
+      background-image: none !important;
+      mix-blend-mode: normal !important;
+      filter: none !important;
+      color: #0A2E46 !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      box-shadow: none !important;
     }
 
     #our-locations .pin {
       display: block !important;
-      margin-top: 14px;
-      padding: 14px;
-      border-radius: 12px;
-      background-color: #FFFFFF !important;
-      color: #0A2E46 !important;
-      border: 1px solid #DCE7F0;
-      box-shadow: 0 4px 12px rgba(10, 46, 70, 0.06);
+      margin-top: 14px !important;
+      padding: 14px !important;
+      border-radius: 12px !important;
+      border: 1px solid #DCE7F0 !important;
+      box-shadow: 0 4px 12px rgba(10, 46, 70, 0.06) !important;
       word-wrap: break-word;
       overflow-wrap: anywhere;
     }
 
-    #our-locations .pin span,
+    #our-locations .pin span {
+      display: block !important;
+      padding: 0 !important;
+      font-size: 14px !important;
+      line-height: 1.6 !important;
+    }
+
     #our-locations .pin i {
-      color: #0A2E46 !important;
+      position: static !important;
       display: inline !important;
       width: auto !important;
+      background: transparent !important;
+      color: #4EB838 !important;
+      margin-right: 6px;
     }
 
     #our-locations .pin h2 {
+      position: static !important;
       display: block !important;
       width: 100% !important;
-      margin-bottom: 10px !important;
-      border-radius: 6px;
+      margin: 0 0 10px 0 !important;
+      padding: 10px 14px !important;
+      border-radius: 8px !important;
       background-color: #0C334A !important;
       color: #75D457 !important;
+      font-size: 15px !important;
     }
   }
 
