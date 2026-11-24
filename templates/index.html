@@ -414,16 +414,15 @@
     text-align: left !important;
   }
 
-  /* Hero CTA Button Animations */
+  /* Hero CTA 360-Deg Arrow Hover Animation */
   .lb-hero-arrow-btn {
     position: relative;
     overflow: hidden;
   }
 
-  .lb-btn-arrow {
+  .lb-hero-arrow-btn .lb-btn-arrow {
     display: inline-block;
-    transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
-    animation: lbHeroArrowPulse 2.4s ease-in-out infinite;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .lb-hero-arrow-btn:hover {
@@ -431,13 +430,8 @@
   }
 
   .lb-hero-arrow-btn:hover .lb-btn-arrow {
-    animation: none;
-    transform: translateX(5px);
-  }
-
-  @keyframes lbHeroArrowPulse {
-    0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(3px); }
+    animation: none !important;
+    transform: rotate(360deg) !important;
   }
 
   /* Explore Services: Green by default -> View Training color on hover */
