@@ -847,10 +847,7 @@
     <div class="container-fluid" style="box-sizing: border-box;">
         <div class="card rounded-4 pt-5 pb-5 border-0">
             <div class="container text-left" data-aos="fade-down" data-aos-duration="1000">
-                <h2 class="card-title fw-bold mb-1 lb-section-heading">Our Locations</h2>
-                <div class="mb-5">
-                    <h6 class="card-subtitle mt-1 mb-0 lb-locations-tagline">Global Presence, Local Expertise</h6>
-                </div>
+                <h2 class="card-title fw-bold mb-4 lb-section-heading">Our Locations</h2>
 
                 <div class="map-container position-relative mx-auto" style="width: 100%;">
                     <img src="static/images/maplocations.jpg" alt="World map" class="img-fluid rounded-3 w-100">
@@ -907,6 +904,10 @@
                             <i class="ri-links-line fs-5" style="color: #75d457"></i> https://www.lloydsbureau.com
                         </span>
                     </div>
+                </div>
+
+                <div class="mt-4 text-center">
+                    <h6 class="card-subtitle mt-1 mb-0 lb-locations-tagline">Global Presence, Local Expertise</h6>
                 </div>
             </div>
         </div>
@@ -1608,7 +1609,7 @@
     font-size: 19px !important;
     font-weight: 500 !important;
     color: #4EB838 !important;
-    transform-origin: left center;
+    transform-origin: center center;
     cursor: pointer;
     transition: transform 0.25s ease, font-weight 0.2s ease;
   }
@@ -1729,39 +1730,56 @@
 
     #our-locations .pin {
       position: absolute !important;
-      z-index: 20;
+      z-index: 30;
     }
 
     #our-locations .pin > span {
+      display: none !important;
       position: fixed !important;
       left: 16px !important;
       right: 16px !important;
-      bottom: 92px !important;
-      top: auto !important;
+      top: 132px !important;
+      bottom: auto !important;
       transform: none !important;
+      width: calc(100vw - 32px) !important;
+      min-width: calc(100vw - 32px) !important;
       max-width: calc(100vw - 32px) !important;
-      width: auto !important;
-      max-height: 60vh !important;
+      max-height: 62vh !important;
       overflow-y: auto !important;
+      white-space: normal !important;
       background: #FFFFFF !important;
       color: #0A2E46 !important;
+      padding: 14px !important;
       border-radius: 12px !important;
-      box-shadow: 0 14px 34px rgba(10, 46, 70, 0.25) !important;
+      box-shadow: 0 14px 34px rgba(10, 46, 70, 0.28) !important;
       border: 1px solid #DCE7F0 !important;
-      opacity: 0 !important;
-      visibility: hidden !important;
-      pointer-events: none !important;
-      transition: opacity 0.22s ease, visibility 0.22s ease;
-      z-index: 9999 !important;
-      overflow-wrap: anywhere;
+      opacity: 1 !important;
+      visibility: visible !important;
+      z-index: 99999 !important;
+      word-break: break-word !important;
     }
 
     #our-locations .pin:hover > span,
     #our-locations .pin:focus-within > span,
     #our-locations .pin.is-open > span {
-      opacity: 1 !important;
-      visibility: visible !important;
+      display: block !important;
       pointer-events: auto !important;
+    }
+
+    #our-locations .pin > span h2 {
+      display: block !important;
+      width: 100% !important;
+      margin: 0 0 10px 0 !important;
+      padding: 10px 14px !important;
+      border-radius: 8px !important;
+      background-color: #0C334A !important;
+      color: #75D457 !important;
+      font-size: 15px !important;
+    }
+
+    #our-locations .pin > span i {
+      display: inline !important;
+      margin-right: 6px !important;
     }
   }
 
