@@ -913,6 +913,32 @@
     </div>
 </section>
 
+<script>
+  (function () {
+    const pins = document.querySelectorAll('#our-locations .pin');
+    if (!pins.length) return;
+
+    pins.forEach((pin) => {
+      pin.addEventListener('click', function (e) {
+        if (window.innerWidth <= 991) {
+          e.stopPropagation();
+          const alreadyOpen = pin.classList.contains('is-open');
+          pins.forEach((p) => p.classList.remove('is-open'));
+          if (!alreadyOpen) {
+            pin.classList.add('is-open');
+          }
+        }
+      });
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('#our-locations .pin')) {
+        pins.forEach((p) => p.classList.remove('is-open'));
+      }
+    });
+  })();
+</script>
+
 <style>
   /* ================= SHARED SECTION HEADINGS ================= */
   .lb-section-heading {
@@ -1695,83 +1721,47 @@
       height: 175px;
     }
 
-    /* Reset Our Locations Map & Pins on Mobile/Tablet so no green overlay covers the map */
+    /* Keep green map dots interactive and clamp hover/tap popups inside mobile screen */
     #our-locations .map-container {
+      position: relative !important;
       overflow: visible !important;
-      background: transparent !important;
-      background-image: none !important;
-    }
-
-    #our-locations .map-container::before,
-    #our-locations .map-container::after,
-    #our-locations .pin::before,
-    #our-locations .pin::after,
-    #our-locations .pin span::before,
-    #our-locations .pin span::after {
-      display: none !important;
-      content: none !important;
-    }
-
-    #our-locations .pin,
-    #our-locations .pin span,
-    #our-locations .pin div {
-      position: static !important;
-      left: auto !important;
-      right: auto !important;
-      top: auto !important;
-      bottom: auto !important;
-      transform: none !important;
-      width: 100% !important;
-      max-width: 100% !important;
-      height: auto !important;
-      background: #FFFFFF !important;
-      background-color: #FFFFFF !important;
-      background-image: none !important;
-      mix-blend-mode: normal !important;
-      filter: none !important;
-      color: #0A2E46 !important;
-      opacity: 1 !important;
-      visibility: visible !important;
-      box-shadow: none !important;
     }
 
     #our-locations .pin {
-      display: block !important;
-      margin-top: 14px !important;
-      padding: 14px !important;
+      position: absolute !important;
+      z-index: 20;
+    }
+
+    #our-locations .pin > span {
+      position: fixed !important;
+      left: 16px !important;
+      right: 16px !important;
+      bottom: 92px !important;
+      top: auto !important;
+      transform: none !important;
+      max-width: calc(100vw - 32px) !important;
+      width: auto !important;
+      max-height: 60vh !important;
+      overflow-y: auto !important;
+      background: #FFFFFF !important;
+      color: #0A2E46 !important;
       border-radius: 12px !important;
+      box-shadow: 0 14px 34px rgba(10, 46, 70, 0.25) !important;
       border: 1px solid #DCE7F0 !important;
-      box-shadow: 0 4px 12px rgba(10, 46, 70, 0.06) !important;
-      word-wrap: break-word;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+      transition: opacity 0.22s ease, visibility 0.22s ease;
+      z-index: 9999 !important;
       overflow-wrap: anywhere;
     }
 
-    #our-locations .pin span {
-      display: block !important;
-      padding: 0 !important;
-      font-size: 14px !important;
-      line-height: 1.6 !important;
-    }
-
-    #our-locations .pin i {
-      position: static !important;
-      display: inline !important;
-      width: auto !important;
-      background: transparent !important;
-      color: #4EB838 !important;
-      margin-right: 6px;
-    }
-
-    #our-locations .pin h2 {
-      position: static !important;
-      display: block !important;
-      width: 100% !important;
-      margin: 0 0 10px 0 !important;
-      padding: 10px 14px !important;
-      border-radius: 8px !important;
-      background-color: #0C334A !important;
-      color: #75D457 !important;
-      font-size: 15px !important;
+    #our-locations .pin:hover > span,
+    #our-locations .pin:focus-within > span,
+    #our-locations .pin.is-open > span {
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: auto !important;
     }
   }
 
