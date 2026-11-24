@@ -202,7 +202,10 @@
             </div>
 
             <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 my-2">
-              <a href="#download-section" class="mobile-util-link"><i class="fa-solid fa-cloud-arrow-down me-1"></i> Profile</a>
+              <a href="#download-section" class="mobile-util-link mobile-profile-action d-inline-flex align-items-center">
+                <i class="fa-solid fa-cloud-arrow-down me-1 mobile-profile-icon"></i>
+                <span>Profile</span>
+              </a>
               <a href="/Verifycertificate" class="mobile-util-link"><i class="fa-solid fa-shield-halved me-1"></i> Verify Certificate</a>
               <form method="POST" action="/" class="mb-0 d-flex align-items-center">
                 <i class="fa-solid fa-globe me-1 text-navy"></i>
@@ -216,7 +219,7 @@
               </form>
             </div>
 
-            <a href="/contact" class="btn quote-btn w-100 mt-2">Get a Quote <i class="fa-solid fa-arrow-right ms-1"></i></a>
+            <a href="/contact" class="btn quote-btn lb-arrow-btn w-100 mt-2">Get a Quote <i class="fa-solid fa-arrow-right ms-1"></i></a>
           </li>
         </ul>
       </div>
@@ -309,7 +312,6 @@
     const whoWord = document.getElementById('whoWeServeRunningWord');
     const segmentLinks = Array.from(document.querySelectorAll('#whoWeServeBar .who-segment-link'));
 
-    // 1. Word-by-word green highlight effect on "Who We Serve" button (matching video_1.mp4 style)
     let wordSpans = [];
     let wordIndex = 0;
     let isPaused = false;
@@ -353,7 +355,6 @@
       });
     }
 
-    // 2. Active green selection for Individuals (default), Businesses, Governments
     function setActiveSegment(segmentName) {
       segmentLinks.forEach(function (link) {
         link.classList.toggle('is-selected-green', link.getAttribute('data-who-segment') === segmentName);
@@ -405,7 +406,6 @@
     document.addEventListener('DOMContentLoaded', syncSegmentFromState);
     syncSegmentFromState();
 
-    // 3. Dropdown handlers
     function closeAll(except) {
       dropdowns.forEach(function (d) {
         if (d !== except) d.classList.remove('lb-open');
@@ -510,6 +510,15 @@
     z-index: 9999 !important;
   }
 
+  /* 360-Deg Arrow Hover in Navbar */
+  #lbFixedHeader .lb-arrow-btn i.fa-arrow-right {
+    display: inline-block;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  #lbFixedHeader .lb-arrow-btn:hover i.fa-arrow-right {
+    transform: rotate(360deg) !important;
+  }
+
   /* Top Bar */
   .top-bar-wrapper { background-color: #E5ECF1; border-bottom: 1px solid #D3DFE8; font-size: 13px; color: #0A2E46; }
   .top-bar-link { color: #0A2E46 !important; text-decoration: none; font-weight: 500; }
@@ -523,7 +532,6 @@
   .custom-navbar-brand { display: flex !important; align-items: center !important; margin: 0 !important; padding: 0 !important; position: static !important; transform: none !important; height: auto !important; flex-shrink: 0; }
   .custom-logo { height: 54px !important; width: auto !important; max-height: none !important; object-fit: contain; display: block !important; position: static !important; margin: 0 !important; padding: 0 !important; transform: none !important; }
   .custom-nav-list { gap: 24px; }
-  @media (max-width: 1280px) { .custom-nav-list { gap: 14px; } }
   .main-navbar .styled-link { color: #0A2E46 !important; font-weight: 600 !important; font-size: 15px; letter-spacing: -0.01em; padding: 10px 4px !important; position: relative; white-space: nowrap; }
   .main-navbar .styled-link:hover { color: #4EB838 !important; }
   .small-caret { font-size: 11px; vertical-align: middle; }
@@ -543,7 +551,7 @@
     50% { transform: translateY(-2.5px) scale(1.05); }
   }
 
-  /* Customer Hub Button: Border/box removed, soft matching tint */
+  /* Customer Hub Button */
   .customer-hub-btn {
     background-color: #EDF4F8;
     border: none !important;
@@ -657,18 +665,46 @@
   .who-search-input:focus { border-color: #4EB838; box-shadow: 0 0 0 2px rgba(78, 184, 56, 0.18); }
   .who-search-btn { position: absolute; right: 6px; top: 50%; transform: translateY(-50%); background: transparent; border: none; padding: 2px 6px; color: #0A2E46; font-size: 13px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: color 0.2s ease; }
   .who-search-btn:hover { color: #4EB838; }
-  .mobile-util-link { color: #0A2E46 !important; font-size: 13px; font-weight: 600; text-decoration: none; }
+  .mobile-util-link { color: #0A2E46 !important; font-size: 13px; font-weight: 600; text-decoration: none; transition: color 0.25s ease; }
+
+  /* Laptop / Medium Desktop Scaling Adjustment (992px - 1399px) */
+  @media (min-width: 992px) and (max-width: 1399px) {
+    .nav-inner-container { padding-left: 24px; padding-right: 24px; }
+    .custom-logo { height: 46px !important; }
+    .custom-nav-list { gap: 12px; }
+    .main-navbar .styled-link { font-size: 13.5px; padding: 8px 3px !important; }
+    .right-actions-group { gap: 12px; }
+    .customer-hub-btn { padding: 8px 12px; font-size: 13px; }
+    .quote-btn { padding: 9px 15px; font-size: 13.5px; }
+  }
 
   @media (max-width: 991px) {
     .nav-inner-container { padding-left: 16px; padding-right: 16px; }
     .main-navbar { min-height: 68px; padding-top: 8px !important; padding-bottom: 8px !important; }
-    #lbFixedHeader .navbar-collapse { max-height: calc(100vh - 120px); overflow-y: auto !important; padding-top: 10px; padding-bottom: 14px; }
+    #lbFixedHeader .navbar-collapse { max-height: 75vh; overflow-y: auto !important; padding-top: 10px; padding-bottom: 14px; }
     .custom-nav-list { gap: 4px; text-align: left; }
     .main-navbar .active-link::after { display: none; }
     .lb-dd-panel, .lb-mega-mirror { position: static !important; transform: none !important; width: 100% !important; margin-top: 6px; margin-bottom: 8px; padding: 12px; }
     .lb-mega-grid { grid-template-columns: 1fr; gap: 8px; }
     .who-links-group { gap: 10px 18px; font-size: 13px; }
     .who-search-form, .who-search-wrap, .who-search-input { width: 100%; }
+
+    /* Mobile Profile Floating & Hover/Tap Animation */
+    .mobile-profile-action .mobile-profile-icon {
+      display: inline-block;
+      transition: transform 0.3s ease, color 0.25s ease;
+      animation: lbProfileFloat 2.6s ease-in-out infinite;
+    }
+    .mobile-profile-action:hover,
+    .mobile-profile-action:active {
+      color: #4EB838 !important;
+    }
+    .mobile-profile-action:hover .mobile-profile-icon,
+    .mobile-profile-action:active .mobile-profile-icon {
+      color: #4EB838 !important;
+      transform: translateY(-3px) scale(1.14);
+    }
   }
+
   @media (max-width: 575px) { .custom-logo { height: 40px !important; } }
 </style>
