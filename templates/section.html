@@ -1695,10 +1695,45 @@
       height: 175px;
     }
 
-    #our-locations .pin {
+    #our-locations .map-container {
+      overflow: hidden !important;
+    }
+
+    #our-locations .pin,
+    #our-locations .pin * {
       position: static !important;
+      left: auto !important;
+      right: auto !important;
+      top: auto !important;
+      bottom: auto !important;
+      transform: none !important;
+      max-width: 100% !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    #our-locations .pin {
       display: block !important;
       margin-top: 14px;
+      padding: 12px;
+      border-radius: 10px;
+      background-color: #F4F8FB;
+      border: 1px solid #DCE7F0;
+      word-wrap: break-word;
+      overflow-wrap: anywhere;
+    }
+
+    #our-locations .pin i,
+    #our-locations .pin span {
+      display: inline !important;
+      width: auto !important;
+    }
+
+    #our-locations .pin h2 {
+      display: block !important;
+      width: 100% !important;
+      margin-bottom: 10px !important;
+      border-radius: 6px;
     }
   }
 

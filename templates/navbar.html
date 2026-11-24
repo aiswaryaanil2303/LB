@@ -60,7 +60,7 @@
       <button class="navbar-toggler togglerButton border-0 shadow-none" type="button"
         data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <img src="static/images/icons8-menu.gif" alt="Menu Icon" style="height: 26px;">
+        <i class="fa-solid fa-bars" style="font-size: 22px; color: #0A2E46;"></i>
       </button>
 
       <!-- CENTER NAVIGATION -->
@@ -686,7 +686,22 @@
     .main-navbar .active-link::after { display: none; }
     .lb-dd-panel, .lb-mega-mirror { position: static !important; transform: none !important; width: 100% !important; margin-top: 6px; margin-bottom: 8px; padding: 12px; }
     .lb-mega-grid { grid-template-columns: 1fr; gap: 8px; }
-    .who-links-group { gap: 10px 18px; font-size: 13px; }
+
+    /* Balanced Mobile Who We Serve Bar */
+    .who-links-group {
+      width: 100%;
+      display: grid !important;
+      grid-template-columns: repeat(3, auto);
+      justify-content: space-between;
+      gap: 8px 10px;
+      font-size: 12.5px;
+    }
+    .who-title-btn {
+      grid-column: 1 / -1;
+      font-size: 13px;
+      padding-bottom: 2px !important;
+    }
+    .who-divider { display: none !important; }
     .who-search-form, .who-search-wrap, .who-search-input { width: 100%; }
 
     /* Mobile Profile Floating & Hover/Tap Animation */
