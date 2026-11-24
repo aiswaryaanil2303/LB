@@ -1722,10 +1722,25 @@
       height: 175px;
     }
 
-    /* Keep green map dots interactive and clamp hover/tap popups inside mobile screen */
+    #our-locations,
+    #our-locations .container-fluid,
+    #our-locations .container,
+    #our-locations .card {
+      max-width: 100% !important;
+      overflow-x: clip !important;
+    }
+
     #our-locations .map-container {
       position: relative !important;
-      overflow: visible !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      overflow: clip !important;
+    }
+
+    #our-locations .lb-locations-tagline {
+      max-width: 100% !important;
+      white-space: normal !important;
+      text-align: center !important;
     }
 
     #our-locations .pin {
@@ -1733,6 +1748,7 @@
       z-index: 30;
     }
 
+    #our-locations .map-container .pin > span,
     #our-locations .pin > span {
       display: none !important;
       position: fixed !important;
@@ -1740,12 +1756,14 @@
       right: 16px !important;
       top: 132px !important;
       bottom: auto !important;
+      margin: 0 !important;
       transform: none !important;
       width: calc(100vw - 32px) !important;
-      min-width: calc(100vw - 32px) !important;
+      min-width: 0 !important;
       max-width: calc(100vw - 32px) !important;
-      max-height: 62vh !important;
+      max-height: 60vh !important;
       overflow-y: auto !important;
+      overflow-x: hidden !important;
       white-space: normal !important;
       background: #FFFFFF !important;
       color: #0A2E46 !important;
@@ -1755,10 +1773,15 @@
       border: 1px solid #DCE7F0 !important;
       opacity: 1 !important;
       visibility: visible !important;
-      z-index: 99999 !important;
+      z-index: 100000 !important;
       word-break: break-word !important;
+      overflow-wrap: anywhere !important;
+      box-sizing: border-box !important;
     }
 
+    #our-locations .map-container .pin:hover > span,
+    #our-locations .map-container .pin:focus-within > span,
+    #our-locations .map-container .pin.is-open > span,
     #our-locations .pin:hover > span,
     #our-locations .pin:focus-within > span,
     #our-locations .pin.is-open > span {
@@ -1769,12 +1792,14 @@
     #our-locations .pin > span h2 {
       display: block !important;
       width: 100% !important;
+      max-width: 100% !important;
       margin: 0 0 10px 0 !important;
       padding: 10px 14px !important;
       border-radius: 8px !important;
       background-color: #0C334A !important;
       color: #75D457 !important;
       font-size: 15px !important;
+      box-sizing: border-box !important;
     }
 
     #our-locations .pin > span i {
