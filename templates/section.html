@@ -923,9 +923,9 @@
       pin.addEventListener('click', function (e) {
         if (window.innerWidth <= 991) {
           e.stopPropagation();
-          const alreadyOpen = pin.classList.contains('is-open');
+          const isAlreadyOpen = pin.classList.contains('is-open');
           pins.forEach((p) => p.classList.remove('is-open'));
-          if (!alreadyOpen) {
+          if (!isAlreadyOpen) {
             pin.classList.add('is-open');
           }
         }
@@ -1734,7 +1734,7 @@
       position: relative !important;
       width: 100% !important;
       max-width: 100% !important;
-      overflow: clip !important;
+      overflow: visible !important;
     }
 
     #our-locations .lb-locations-tagline {
@@ -1748,20 +1748,29 @@
       z-index: 30;
     }
 
-    #our-locations .map-container .pin > span,
     #our-locations .pin > span {
       display: none !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+    }
+
+    #our-locations .map-container .pin:hover > span,
+    #our-locations .map-container .pin:focus-within > span,
+    #our-locations .map-container .pin.is-open > span,
+    #our-locations .pin:hover > span,
+    #our-locations .pin:focus-within > span,
+    #our-locations .pin.is-open > span {
+      display: block !important;
       position: fixed !important;
       left: 16px !important;
       right: 16px !important;
-      top: 132px !important;
+      top: 120px !important;
       bottom: auto !important;
       margin: 0 !important;
       transform: none !important;
       width: calc(100vw - 32px) !important;
-      min-width: 0 !important;
       max-width: calc(100vw - 32px) !important;
-      max-height: 60vh !important;
+      max-height: 62vh !important;
       overflow-y: auto !important;
       overflow-x: hidden !important;
       white-space: normal !important;
@@ -1773,20 +1782,11 @@
       border: 1px solid #DCE7F0 !important;
       opacity: 1 !important;
       visibility: visible !important;
-      z-index: 100000 !important;
+      pointer-events: auto !important;
+      z-index: 2147483647 !important;
       word-break: break-word !important;
       overflow-wrap: anywhere !important;
       box-sizing: border-box !important;
-    }
-
-    #our-locations .map-container .pin:hover > span,
-    #our-locations .map-container .pin:focus-within > span,
-    #our-locations .map-container .pin.is-open > span,
-    #our-locations .pin:hover > span,
-    #our-locations .pin:focus-within > span,
-    #our-locations .pin.is-open > span {
-      display: block !important;
-      pointer-events: auto !important;
     }
 
     #our-locations .pin > span h2 {
