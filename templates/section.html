@@ -820,7 +820,7 @@
 <section id="our-locations" class="mt-5 mb-5">
     <div class="container-fluid" style="box-sizing: border-box;">
         <div class="card rounded-4 pt-5 pb-5 border-0">
-            <div class="container text-left" data-aos="fade-down" data-aos-duration="1000">
+            <div class="container text-left">
                 <h2 class="card-title fw-bold mb-4 lb-section-heading">Our Locations</h2>
 
                 <div class="map-container position-relative mx-auto" style="width: 100%;">
@@ -1754,6 +1754,7 @@
     #our-locations .card {
       max-width: 100% !important;
       overflow-x: clip !important;
+      transform: none !important;
     }
 
     #our-locations .map-container {
@@ -1795,16 +1796,14 @@
       position: fixed !important;
       left: 16px !important;
       right: 16px !important;
-      top: 140px !important;
+      top: 50% !important;
       bottom: auto !important;
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-      margin-top: 0 !important;
-      transform: none !important;
-      width: auto !important;
-      min-width: 0 !important;
+      margin: 0 !important;
+      transform: translateY(-50%) !important;
+      width: calc(100vw - 32px) !important;
+      min-width: calc(100vw - 32px) !important;
       max-width: calc(100vw - 32px) !important;
-      max-height: 62vh !important;
+      max-height: 70vh !important;
       overflow-y: auto !important;
       overflow-x: hidden !important;
       white-space: normal !important;
