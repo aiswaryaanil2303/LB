@@ -92,33 +92,30 @@
                 </ul>
             </div>
 
-            <!-- Free Membership Column (Follow Us moved down to row below) -->
+            <!-- Free Membership Column -->
             <div class="col">
                 <div class="subscribe-container mx-auto">
                     <h4 class="fw-bold text-white mb-3" style="font-size: 17px;">Free Membership</h4>
-                    <form class="mx-auto" style="max-width: 240px;">
-                        <input type="text" class="form-control mb-2 mx-auto" placeholder="Enter your Name" required
-                            style="height: 32px; font-size: 12px;">
-                        <input type="email" class="form-control mb-2 mx-auto" placeholder="Enter your Email" required
-                            style="height: 32px; font-size: 12px;">
-                        <input type="text" class="form-control mb-2 mx-auto" placeholder="Enter your WhatsApp" required
-                            style="height: 32px; font-size: 12px;">
-                        <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
-                            type="module"></script>
-                        <dotlottie-player
-                            src="https://lottie.host/1702b18c-840a-4d5b-8d6a-9b68f238c289/giezlL5ovj.lottie"
-                            background="transparent" speed="1"
-                            style="width: 100%; height: 34px; box-sizing: border-box;" direction="1"
-                            playMode="normal" loop autoplay>
-                        </dotlottie-player>
+                    <form class="lb-membership-form mx-auto">
+                        <input type="text" class="form-control" placeholder="Enter your Name" required>
+                        <input type="email" class="form-control" placeholder="Enter your Email" required>
+                        <input type="text" class="form-control" placeholder="Enter your WhatsApp" required>
+                        <div class="lb-enroll-wrap">
+                            <dotlottie-player
+                                src="https://lottie.host/1702b18c-840a-4d5b-8d6a-9b68f238c289/giezlL5ovj.lottie"
+                                background="transparent" speed="1"
+                                style="width: 140px; height: 38px; box-sizing: border-box;" direction="1"
+                                playMode="normal" loop autoplay>
+                            </dotlottie-player>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
 
-        <!-- Logo, QR, and Follow Us Section (Payment Options Removed) -->
+        <!-- Logo, QR (Under Quick Links), and Follow Us Section -->
         <div class="row row-cols-1 row-cols-md-4 g-4 text-center align-items-center py-4 footer-bottom-row">
-            <!-- Logo Column -->
+            <!-- Col 1: Logo -->
             <div class="col">
                 <a href="/" style="display: inline-block;">
                     <img src="static/images/lloyds-bureau-horizontal-logo-color-2-rgb-1900px-w-72ppi.png" alt="Logo"
@@ -126,28 +123,35 @@
                 </a>
             </div>
 
-            <!-- WhatsApp QR Column -->
+            <!-- Col 2: WhatsApp QR & Contact QR centered under Quick Links -->
             <div class="col">
-                <a href="#"><img src="static/images/qr.png" alt="WhatsApp QR" class="rounded-2 mb-2"
-                        style="height: 80px; width: 80px;"></a>
-                <h4 class="fw-bold text-white mb-0" style="font-size: 14px;">WhatsApp QR</h4>
+                <div class="lb-qr-group d-flex justify-content-center align-items-center">
+                    <div class="text-center">
+                        <a href="#"><img src="static/images/qr.png" alt="WhatsApp QR" class="rounded-2 mb-2"
+                                style="height: 80px; width: 80px;"></a>
+                        <h4 class="fw-bold text-white mb-0" style="font-size: 14px;">WhatsApp QR</h4>
+                    </div>
+                    <div class="text-center">
+                        <a href="#"><img src="static/images/qr.png" alt="Contact QR" class="rounded-2 mb-2"
+                                style="height: 80px; width: 80px;"></a>
+                        <h4 class="fw-bold text-white mb-0" style="font-size: 14px;">Contact QR</h4>
+                    </div>
+                </div>
             </div>
 
-            <!-- Contact QR Column -->
-            <div class="col">
-                <a href="#"><img src="static/images/qr.png" alt="Contact QR" class="rounded-2 mb-2"
-                        style="height: 80px; width: 80px;"></a>
-                <h4 class="fw-bold text-white mb-0" style="font-size: 14px;">Contact QR</h4>
-            </div>
+            <!-- Col 3: Spacer matching Partner Profile -->
+            <div class="col d-none d-md-block"></div>
 
-            <!-- Follow Us On (Moved Downwards Here) -->
+            <!-- Col 4: Follow Us On -->
             <div class="col">
-                <h4 class="fw-bold text-white mb-3" style="font-size: 17px;">Follow Us On</h4>
-                <div class="d-flex justify-content-center align-items-center gap-4">
-                    <a href="#" class="footerLink"><i class='bx bxl-facebook fs-4'></i></a>
-                    <a href="#" class="footerLink"><i class='bx bxl-instagram fs-4'></i></a>
-                    <a href="https://www.linkedin.com/company/lloyds-bureau/" class="footerLink"><i class='bx bxl-linkedin fs-4'></i></a>
-                    <a href="#" class="footerLink"><i class="ri-twitter-x-line fs-4"></i></a>
+                <div class="lb-follow-us">
+                    <h4 class="fw-bold text-white mb-3" style="font-size: 17px;">Follow Us On</h4>
+                    <div class="d-flex justify-content-center align-items-center gap-4">
+                        <a href="#" class="footerLink"><i class='bx bxl-facebook fs-2'></i></a>
+                        <a href="#" class="footerLink"><i class='bx bxl-instagram fs-2'></i></a>
+                        <a href="https://www.linkedin.com/company/lloyds-bureau/" class="footerLink"><i class='bx bxl-linkedin fs-2'></i></a>
+                        <a href="#" class="footerLink"><i class="ri-twitter-x-line fs-2"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -172,6 +176,9 @@
         </div>
     </div>
 
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+        type="module"></script>
+
     <!-- CSS Styling -->
     <style>
         .footerLink {
@@ -190,6 +197,47 @@
             text-decoration: none;
         }
 
+        #footer .lb-membership-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 235px;
+            gap: 11px;
+        }
+
+        #footer .lb-membership-form .form-control {
+            width: 100%;
+            height: 36px;
+            font-size: 12.5px;
+            padding: 6px 12px;
+            border-radius: 6px;
+            margin: 0 !important;
+        }
+
+        #footer .lb-membership-form .lb-enroll-wrap {
+            margin-top: 6px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            #footer .footer-bottom-row > .col:nth-child(2) {
+                overflow: visible !important;
+            }
+
+            #footer .lb-qr-group {
+                display: inline-flex !important;
+                flex-wrap: nowrap !important;
+                gap: 4.5rem !important;
+            }
+        }
+
+        #footer .lb-follow-us {
+            margin-top: 24px;
+            padding-top: 6px;
+        }
+
         @media only screen and (max-width: 767px) {
             #footer {
                 padding-bottom: 88px !important;
@@ -199,6 +247,9 @@
             }
             .footer-bottom-row .col {
                 margin-bottom: 12px;
+            }
+            #footer .lb-qr-group {
+                gap: 2.5rem !important;
             }
         }
 
