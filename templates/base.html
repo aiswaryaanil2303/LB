@@ -31,6 +31,19 @@
     <link rel="stylesheet" href="static/css/style.css">
 
     <style>
+      /* Change ONLY the Worldwide Presence globe outline strokes/text from blue to green */
+      .fa-globe,
+      .fa-earth-americas,
+      .fa-earth-europe,
+      .fa-earth-asia,
+      [class*="ri-global"],
+      [class*="bx-globe"],
+      [class*="bi-globe"],
+      [class*="worldwide"] i,
+      [data-feature*="worldwide"] i {
+        color: #75D457 !important;
+      }
+
       /* Larger Floating WhatsApp & Call Buttons */
       .fixed-buttons {
         gap: 14px !important;
@@ -93,6 +106,21 @@
           gap: 2.5rem !important;
         }
       }
+
+
+/* Change ONLY the Worldwide Presence globe outline inside #heroHighlightsStrip to green */
+#heroHighlightsStrip .fa-globe,
+#heroHighlightsStrip .fa-earth-americas,
+#heroHighlightsStrip .fa-earth-europe,
+#heroHighlightsStrip .fa-earth-asia,
+#heroHighlightsStrip [class*="ri-global"],
+#heroHighlightsStrip [class*="bx-globe"],
+#heroHighlightsStrip [class*="bi-globe"] {
+  color: #75D457 !important;
+}
+
+
+
     </style>
 </head>
 
@@ -138,6 +166,103 @@
     offset: 80,
     delay: 80
   });
+</script>
+<script>
+  (function () {
+    function recolorWorldwideGlobeOnly() {
+      document.querySelectorAll('*').forEach((el) => {
+        if (
+          el.children.length === 0 &&
+          el.textContent &&
+          el.textContent.trim().toLowerCase() === 'worldwide presence'
+        ) {
+          const itemBox = el.closest('.d-flex, .col, .card, .item, li') || el.parentElement;
+          if (!itemBox) return;
+
+          // Icon fonts (<i>)
+          itemBox.querySelectorAll('i').forEach((icon) => {
+            icon.style.setProperty('color', '#75D457', 'important');
+          });
+
+          // Inline SVGs: keep transparent background/cutout, only swap stroke or non-none fills
+          itemBox.querySelectorAll('svg').forEach((svg) => {
+            svg.style.setProperty('color', '#75D457', 'important');
+            svg.querySelectorAll('path, circle, ellipse, line, polyline, polygon, rect').forEach((shape) => {
+              const currentFill = shape.getAttribute('fill');
+              const currentStroke = shape.getAttribute('stroke');
+              if (currentStroke && currentStroke !== 'none') {
+                shape.style.setProperty('stroke', '#75D457', 'important');
+              }
+              if (currentFill && currentFill !== 'none') {
+                shape.style.setProperty('fill', '#75D457', 'important');
+              }
+              if (!currentFill && !currentStroke) {
+                shape.style.setProperty('stroke', '#75D457', 'important');
+              }
+            });
+          });
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', recolorWorldwideGlobeOnly);
+    window.addEventListener('load', recolorWorldwideGlobeOnly);
+    setTimeout(recolorWorldwideGlobeOnly, 200);
+  })();
+
+
+
+  (function () {
+    function colorOnlyWorldwideGlobeInStrip() {
+      const strip = document.getElementById('heroHighlightsStrip') || document.querySelector('.hero-highlights-strip');
+      if (!strip) return;
+
+      const label = Array.from(strip.querySelectorAll('*')).find(
+        (el) =>
+          el.children.length === 0 &&
+          el.textContent &&
+          el.textContent.trim().toLowerCase().includes('worldwide presence')
+      );
+      if (!label) return;
+
+      // Walk up only inside #heroHighlightsStrip to find the single item wrapper for Worldwide Presence
+      let item = label.parentElement;
+      while (item && item !== strip) {
+        const hasIcon = item.querySelector('svg, i');
+        const text = (item.textContent || '').toLowerCase();
+        if (hasIcon && text.includes('worldwide presence') && !text.includes('global standards') && !text.includes('trusted partner')) {
+          item.querySelectorAll('i').forEach((ic) => {
+            ic.style.setProperty('color', '#75D457', 'important');
+          });
+
+          item.querySelectorAll('svg').forEach((svg) => {
+            svg.style.setProperty('color', '#75D457', 'important');
+            svg.querySelectorAll('path, circle, ellipse, line, polyline, polygon, rect').forEach((shape) => {
+              const fill = shape.getAttribute('fill');
+              const stroke = shape.getAttribute('stroke');
+              if (stroke && stroke !== 'none') {
+                shape.style.setProperty('stroke', '#75D457', 'important');
+              } else if (!fill || fill === 'none') {
+                shape.style.setProperty('stroke', '#75D457', 'important');
+              }
+              if (fill && fill !== 'none') {
+                shape.style.setProperty('fill', '#75D457', 'important');
+              }
+            });
+          });
+          break;
+        }
+        item = item.parentElement;
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', colorOnlyWorldwideGlobeInStrip);
+    window.addEventListener('load', colorOnlyWorldwideGlobeInStrip);
+    setTimeout(colorOnlyWorldwideGlobeInStrip, 200);
+  })();
+
+
+
 </script>
 </body>
 </html>
