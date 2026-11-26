@@ -602,17 +602,19 @@
   <div class="container-fluid px-3 px-md-4">
     <div class="lb-career-wrapper rounded-4 overflow-hidden" data-aos="fade-up" data-aos-duration="900">
 
-      <!-- Top Dark Navy Banner (Full-width background, inner text framed within column bounds) -->
+      <!-- Top Dark Navy Banner (Centered heading & subtext across desktop, laptop, tablet & mobile) -->
       <div class="lb-career-header">
-        <div class="lb-career-inner d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3">
-          <div>
+        <div class="lb-career-inner lb-career-header-centered">
+          <div class="lb-career-center">
             <h2 class="lb-career-title mb-2">Join Our Team</h2>
             <div class="lb-career-subtexts">
               <p class="lb-career-sub1 mb-1">Join. Grow. Succeed.</p>
               <p class="lb-career-sub2 mb-0">Build your career with us. Discover opportunities and become part of our growing team.</p>
             </div>
           </div>
-          <span class="lb-career-badge">CAREERS</span>
+          <div class="lb-career-badge-wrap">
+            <span class="lb-career-badge">CAREERS</span>
+          </div>
         </div>
       </div>
 
@@ -1604,40 +1606,61 @@
   }
 
   #careersSection .lb-career-inner {
-    max-width: 1140px;
+    max-width: 1200px;
     margin: 0 auto;
     width: 100%;
   }
 
   #careersSection .lb-career-header {
     background: linear-gradient(135deg, #0A2E46 0%, #124A6E 55%, #0D3A57 100%) !important;
-    padding: 34px 44px !important;
+    padding: 36px 44px !important;
     color: #FFFFFF;
     border: none !important;
+  }
+
+  #careersSection .lb-career-header-centered {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  #careersSection .lb-career-center {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
   }
 
   .lb-career-title {
     font-size: clamp(24px, 2.5vw, 32px);
     font-weight: 800;
     color: #FFFFFF;
+    text-align: center;
   }
 
   .lb-career-sub1 {
     font-size: 16px;
     font-weight: 500;
     color: #E5ECF1;
+    text-align: center;
     transition: color 0.25s ease;
   }
 
   .lb-career-sub2 {
     font-size: 13.5px;
     color: rgba(229, 236, 241, 0.85);
+    text-align: center;
     transition: color 0.25s ease;
   }
 
   #careersSection .lb-career-subtexts {
-    display: inline-block;
-    transform-origin: left center;
+    display: block;
+    width: 100%;
+    text-align: center;
+    transform-origin: center center;
     cursor: pointer;
     transition: transform 0.25s ease;
   }
@@ -1661,6 +1684,27 @@
     padding: 7px 18px;
     border-radius: 24px;
     white-space: nowrap;
+  }
+
+  @media (min-width: 992px) {
+    #careersSection .lb-career-center {
+      padding: 0 130px;
+    }
+
+    #careersSection .lb-career-badge-wrap {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  @media (max-width: 991px) {
+    #careersSection .lb-career-badge-wrap {
+      margin-top: 14px;
+      display: flex;
+      justify-content: center;
+    }
   }
 
   #careersSection .lb-career-subbar {
