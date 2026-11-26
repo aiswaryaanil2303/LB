@@ -923,7 +923,7 @@
   })();
 </script>
 
-<!-- SCROLL-OPEN + SECTION-WIDE POINTER HOVER CONTROLLER -->
+<!-- SCROLL-OPEN + SECTION-WIDE POINTER & MOBILE TOUCH HOVER CONTROLLER -->
 <script>
   (function () {
     if (window.lbSectionHoverInit) return;
@@ -932,16 +932,28 @@
     const sections = Array.from(document.querySelectorAll('section'));
     if (!sections.length) return;
 
+    const isTouchOrMobile = () =>
+      window.innerWidth <= 991 || window.matchMedia('(hover: none)').matches;
+
     sections.forEach((sec) => {
       sec.classList.add('lb-scroll-section');
     });
 
     function openVisibleSections() {
       const vh = window.innerHeight || document.documentElement.clientHeight;
+      const mobile = isTouchOrMobile();
+
       sections.forEach((sec) => {
         const rect = sec.getBoundingClientRect();
-        if (rect.top < vh * 0.92 && rect.bottom > 0) {
+        const inView = rect.top < vh * 0.92 && rect.bottom > 0;
+
+        if (inView) {
           sec.classList.add('is-section-open');
+          if (mobile) {
+            sec.classList.add('is-section-hover');
+          }
+        } else if (mobile) {
+          sec.classList.remove('is-section-hover');
         }
       });
     }
@@ -949,9 +961,15 @@
     if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver(
         (entries) => {
+          const mobile = isTouchOrMobile();
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               entry.target.classList.add('is-section-open');
+              if (mobile) {
+                entry.target.classList.add('is-section-hover');
+              }
+            } else if (mobile) {
+              entry.target.classList.remove('is-section-hover');
             }
           });
         },
@@ -967,15 +985,24 @@
     setTimeout(openVisibleSections, 120);
 
     sections.forEach((sec) => {
-      sec.addEventListener('pointerenter', () => {
+      sec.addEventListener('pointerenter', (e) => {
+        if (e.pointerType === 'touch') return;
         if (!sec.classList.contains('is-section-open')) {
           sec.classList.add('is-section-open');
         }
         sec.classList.add('is-section-hover');
       }, { passive: true });
 
-      sec.addEventListener('pointerleave', () => {
+      sec.addEventListener('pointerleave', (e) => {
+        if (e.pointerType === 'touch') return;
         sec.classList.remove('is-section-hover');
+      }, { passive: true });
+
+      sec.addEventListener('touchstart', () => {
+        sections.forEach((other) => {
+          if (other !== sec) other.classList.remove('is-section-hover');
+        });
+        sec.classList.add('is-section-open', 'is-section-hover');
       }, { passive: true });
     });
   })();
@@ -1836,6 +1863,25 @@
 
   /* ================= TABLET & MOBILE RESPONSIVE ================= */
   @media (max-width: 991px) {
+    section.lb-scroll-section.is-section-open.is-section-hover .lb-srv-ref-card,
+    .lb-srv-ref-card:active {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 28px rgba(10, 46, 70, 0.2);
+    }
+
+    section.lb-scroll-section.is-section-open.is-section-hover .lb-srv-ref-icon,
+    .lb-srv-ref-card:active .lb-srv-ref-icon {
+      background-color: #6AD053;
+      border-color: #6AD053;
+      color: #0A2E46;
+    }
+
+    #careersSection .lb-explore-opp-btn:active {
+      background-color: #4EB838 !important;
+      color: #FFFFFF !important;
+      transform: translateY(-2px) scale(1.02);
+    }
+
     #getToKnowUsSection,
     #getToKnowUsSection.about-section,
     #getToKnowUsSection .container-fluid,
