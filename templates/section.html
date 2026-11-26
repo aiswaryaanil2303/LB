@@ -602,65 +602,71 @@
   <div class="container-fluid px-3 px-md-4">
     <div class="lb-career-wrapper rounded-4 overflow-hidden" data-aos="fade-up" data-aos-duration="900">
 
-      <!-- Top Dark Navy Banner -->
-      <div class="lb-career-header d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3">
-        <div>
-          <h2 class="lb-career-title mb-2">Join Our Team</h2>
-          <div class="lb-career-subtexts">
-            <p class="lb-career-sub1 mb-1">Join. Grow. Succeed.</p>
-            <p class="lb-career-sub2 mb-0">Build your career with us. Discover opportunities and become part of our growing team.</p>
+      <!-- Top Dark Navy Banner (Full-width background, inner text framed within column bounds) -->
+      <div class="lb-career-header">
+        <div class="lb-career-inner d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3">
+          <div>
+            <h2 class="lb-career-title mb-2">Join Our Team</h2>
+            <div class="lb-career-subtexts">
+              <p class="lb-career-sub1 mb-1">Join. Grow. Succeed.</p>
+              <p class="lb-career-sub2 mb-0">Build your career with us. Discover opportunities and become part of our growing team.</p>
+            </div>
           </div>
+          <span class="lb-career-badge">CAREERS</span>
         </div>
-        <span class="lb-career-badge">CAREERS</span>
       </div>
 
       <!-- Current Openings Sub-bar -->
-      <div class="lb-career-subbar d-flex justify-content-between align-items-center">
-        <span class="lb-openings-label">Current Openings</span>
-        <span class="lb-hiring-pill">Actively Hiring</span>
+      <div class="lb-career-subbar">
+        <div class="lb-career-inner d-flex justify-content-between align-items-center">
+          <span class="lb-openings-label">Current Openings</span>
+          <span class="lb-hiring-pill">Actively Hiring</span>
+        </div>
       </div>
 
       <!-- Job Opening Card -->
       <div class="lb-career-body">
-        <div class="lb-job-card">
-          <div class="row g-3 align-items-stretch">
+        <div class="lb-career-inner">
+          <div class="lb-job-card">
+            <div class="row g-3 align-items-stretch">
 
-            <!-- Left Job Details -->
-            <div class="col-12 col-md-10 d-flex flex-column justify-content-between">
-              <div>
-                <h4 class="lb-job-title mb-1">Career Title</h4>
-                <p class="lb-job-id mb-3">JOB ID: 224425</p>
-                <hr class="lb-job-divider">
+              <!-- Left Job Details -->
+              <div class="col-12 col-md-10 d-flex flex-column justify-content-between">
+                <div>
+                  <h4 class="lb-job-title mb-1">Career Title</h4>
+                  <p class="lb-job-id mb-3">JOB ID: 224425</p>
+                  <hr class="lb-job-divider">
 
-                <div class="d-flex flex-wrap align-items-center gap-3 gap-md-5 my-3 lb-job-meta">
-                  <span><i class="fa-solid fa-briefcase me-2 lb-meta-icon"></i> Full Time</span>
-                  <span><i class="fa-solid fa-location-dot me-2 lb-meta-icon"></i> Cochin, Kerala, India</span>
-                  <span><i class="fa-regular fa-file-lines me-2 lb-meta-icon"></i> Contract: Permanent</span>
+                  <div class="d-flex flex-wrap align-items-center gap-3 gap-md-5 my-3 lb-job-meta">
+                    <span><i class="fa-solid fa-briefcase me-2 lb-meta-icon"></i> Full Time</span>
+                    <span><i class="fa-solid fa-location-dot me-2 lb-meta-icon"></i> Cochin, Kerala, India</span>
+                    <span><i class="fa-regular fa-file-lines me-2 lb-meta-icon"></i> Contract: Permanent</span>
+                  </div>
+
+                  <p class="lb-job-desc mb-0">Job Description</p>
                 </div>
-
-                <p class="lb-job-desc mb-0">Job Description</p>
               </div>
+
+              <!-- Right Share Icons -->
+              <div class="col-12 col-md-2 d-flex flex-column justify-content-between align-items-start align-items-md-end">
+                <div class="lb-share-stack">
+                  <span class="lb-share-circle is-main"><i class="fa-solid fa-share-nodes"></i></span>
+                  <a href="https://www.linkedin.com/company/lloyds-bureau/" target="_blank" class="lb-share-circle" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                  <a href="#" class="lb-share-circle" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                  <a href="#" class="lb-share-circle" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                  <a href="/contact" class="lb-share-circle" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+                </div>
+              </div>
+
             </div>
 
-            <!-- Right Share Icons -->
-            <div class="col-12 col-md-2 d-flex flex-column justify-content-between align-items-start align-items-md-end">
-              <div class="lb-share-stack">
-                <span class="lb-share-circle is-main"><i class="fa-solid fa-share-nodes"></i></span>
-                <a href="https://www.linkedin.com/company/lloyds-bureau/" target="_blank" class="lb-share-circle" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="#" class="lb-share-circle" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#" class="lb-share-circle" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="/contact" class="lb-share-circle" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
-              </div>
+            <!-- Bottom Right Animated Button -->
+            <div class="d-flex justify-content-start justify-content-md-end mt-4">
+              <a href="/careers" class="btn lb-explore-opp-btn lb-arrow-btn">
+                <span>Explore this opportunity</span>
+                <i class="fa-solid fa-arrow-right ms-2 lb-btn-arrow"></i>
+              </a>
             </div>
-
-          </div>
-
-          <!-- Bottom Right Animated Button -->
-          <div class="d-flex justify-content-start justify-content-md-end mt-4">
-            <a href="/careers" class="btn lb-explore-opp-btn lb-arrow-btn">
-              <span>Explore this opportunity</span>
-              <i class="fa-solid fa-arrow-right ms-2 lb-btn-arrow"></i>
-            </a>
           </div>
         </div>
       </div>
@@ -917,7 +923,138 @@
   })();
 </script>
 
+<!-- SCROLL-OPEN + SECTION-WIDE POINTER HOVER CONTROLLER -->
+<script>
+  (function () {
+    if (window.lbSectionHoverInit) return;
+    window.lbSectionHoverInit = true;
+
+    const sections = Array.from(document.querySelectorAll('section'));
+    if (!sections.length) return;
+
+    sections.forEach((sec) => {
+      sec.classList.add('lb-scroll-section');
+    });
+
+    function openVisibleSections() {
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      sections.forEach((sec) => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top < vh * 0.92 && rect.bottom > 0) {
+          sec.classList.add('is-section-open');
+        }
+      });
+    }
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-section-open');
+            }
+          });
+        },
+        { threshold: 0.08, rootMargin: '0px 0px -6% 0px' }
+      );
+
+      sections.forEach((sec) => observer.observe(sec));
+    }
+
+    window.addEventListener('scroll', openVisibleSections, { passive: true });
+    window.addEventListener('resize', openVisibleSections, { passive: true });
+    window.addEventListener('load', openVisibleSections);
+    setTimeout(openVisibleSections, 120);
+
+    sections.forEach((sec) => {
+      sec.addEventListener('pointerenter', () => {
+        if (!sec.classList.contains('is-section-open')) {
+          sec.classList.add('is-section-open');
+        }
+        sec.classList.add('is-section-hover');
+      }, { passive: true });
+
+      sec.addEventListener('pointerleave', () => {
+        sec.classList.remove('is-section-hover');
+      }, { passive: true });
+    });
+  })();
+</script>
+
 <style>
+  /* ================= SCROLL OPEN + SECTION-WIDE POINTER HOVER ================= */
+  section.lb-scroll-section {
+    opacity: 0.88;
+    transform: translateY(18px);
+    transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  section.lb-scroll-section.is-section-open {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Trigger hover states across elements inside an opened section when pointing anywhere in the section */
+  section.lb-scroll-section.is-section-open.is-section-hover .lb-srv-section-subtitle,
+  section.lb-scroll-section.is-section-open.is-section-hover .lb-demanded-subtitle {
+    color: #1E6B2B !important;
+    transform: scale(1.04);
+  }
+
+  section.lb-scroll-section.is-section-open.is-section-hover #mostDemandedCoursesSection .cardCourse.lb-mirror-tile {
+    background: linear-gradient(145deg, rgba(235, 246, 255, 0.96), rgba(214, 236, 253, 0.88)) !important;
+    border-color: rgba(147, 206, 249, 0.95) !important;
+    transform: translateY(-4px);
+    box-shadow: 0 16px 34px rgba(135, 206, 250, 0.32), 0 0 0 2px rgba(186, 226, 255, 0.55) !important;
+  }
+
+  section.lb-scroll-section.is-section-open.is-section-hover .lb-srv-ref-card {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 28px rgba(10, 46, 70, 0.2);
+  }
+
+  section.lb-scroll-section.is-section-open.is-section-hover .lb-srv-ref-card img {
+    transform: scale(1.04);
+  }
+
+  section.lb-scroll-section.is-section-open.is-section-hover .lb-srv-ref-icon {
+    background-color: #6AD053;
+    border-color: #6AD053;
+    color: #0A2E46;
+  }
+
+  section.lb-scroll-section.is-section-open.is-section-hover #careersSection .lb-career-subtexts,
+  #careersSection.lb-scroll-section.is-section-open.is-section-hover .lb-career-subtexts {
+    transform: scale(1.03);
+  }
+
+  section.lb-scroll-section.is-section-open.is-section-hover #careersSection .lb-career-sub1,
+  section.lb-scroll-section.is-section-open.is-section-hover #careersSection .lb-career-sub2,
+  #careersSection.lb-scroll-section.is-section-open.is-section-hover .lb-career-sub1,
+  #careersSection.lb-scroll-section.is-section-open.is-section-hover .lb-career-sub2 {
+    color: #6AD053 !important;
+  }
+
+  section.lb-scroll-section.is-section-open.is-section-hover #careersSection .lb-explore-opp-btn {
+    background-color: #4EB838 !important;
+    color: #FFFFFF !important;
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 10px 22px rgba(78, 184, 56, 0.32);
+  }
+
+  section.lb-scroll-section.is-section-open.is-section-hover .lb-about-list .about-h4 {
+    font-weight: 700 !important;
+    transform: scale(1.04);
+  }
+
+  #our-locations.lb-scroll-section.is-section-open.is-section-hover .lb-locations-tagline,
+  #our-locations .lb-locations-tagline:hover {
+    transform: scale(1.08) !important;
+    font-weight: 800 !important;
+    color: #4EB838 !important;
+  }
+
   /* ================= SHARED SECTION HEADINGS ================= */
   .lb-section-heading {
     font-size: clamp(1.65rem, 2.5vw, 2.375rem);
@@ -1287,7 +1424,7 @@
 
   .lb-srv-section-subtitle {
     display: inline-block;
-    font-size: 13.5px;
+    font-size: clamp(0.95rem, 1.3vw, 1.125rem) !important;
     color: #5C7282;
     max-width: 620px;
     margin: 0 auto 28px;
@@ -1439,6 +1576,12 @@
     box-shadow: 0 14px 36px rgba(10, 46, 70, 0.08) !important;
   }
 
+  #careersSection .lb-career-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
   #careersSection .lb-career-header {
     background: linear-gradient(135deg, #0A2E46 0%, #124A6E 55%, #0D3A57 100%) !important;
     padding: 34px 44px !important;
@@ -1456,11 +1599,13 @@
     font-size: 16px;
     font-weight: 500;
     color: #E5ECF1;
+    transition: color 0.25s ease;
   }
 
   .lb-career-sub2 {
     font-size: 13.5px;
     color: rgba(229, 236, 241, 0.85);
+    transition: color 0.25s ease;
   }
 
   #careersSection .lb-career-subtexts {
@@ -1477,7 +1622,6 @@
   #careersSection .lb-career-subtexts:hover .lb-career-sub1,
   #careersSection .lb-career-subtexts:hover .lb-career-sub2 {
     color: #6AD053 !important;
-    transition: color 0.25s ease;
   }
 
   #careersSection .lb-career-badge {
@@ -1589,7 +1733,8 @@
     background-color: #0A2E46;
     color: #FFFFFF;
   }
-#careersSection .lb-explore-opp-btn {
+
+  #careersSection .lb-explore-opp-btn {
     background-color: #124A6E !important;
     color: #FFFFFF !important;
     border: none !important;
