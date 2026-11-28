@@ -435,7 +435,7 @@
 </section>
 
 <!-- OUR SERVICES (3x3 Grid Layout Matching Reference) -->
-<section class="lb-srv-grid-section mt-5 mb-5">
+<section class="lb-srv-grid-section mt-5 mb-5" id="ourServicesSection">
   <div class="container">
 
     <!-- Centered Heading -->
@@ -1038,21 +1038,6 @@
     box-shadow: 0 16px 34px rgba(135, 206, 250, 0.32), 0 0 0 2px rgba(186, 226, 255, 0.55) !important;
   }
 
-  section.lb-scroll-section.is-section-open.is-section-hover .lb-srv-ref-card {
-    transform: translateY(-4px);
-    box-shadow: 0 14px 28px rgba(10, 46, 70, 0.2);
-  }
-
-  section.lb-scroll-section.is-section-open.is-section-hover .lb-srv-ref-card img {
-    transform: scale(1.04);
-  }
-
-  section.lb-scroll-section.is-section-open.is-section-hover .lb-srv-ref-icon {
-    background-color: #6AD053;
-    border-color: #6AD053;
-    color: #0A2E46;
-  }
-
   section.lb-scroll-section.is-section-open.is-section-hover #careersSection .lb-career-subtexts,
   #careersSection.lb-scroll-section.is-section-open.is-section-hover .lb-career-subtexts {
     transform: scale(1.03);
@@ -1070,18 +1055,6 @@
     color: #FFFFFF !important;
     transform: translateY(-2px) scale(1.02);
     box-shadow: 0 10px 22px rgba(78, 184, 56, 0.32);
-  }
-
-  section.lb-scroll-section.is-section-open.is-section-hover .lb-about-list .about-h4 {
-    font-weight: 700 !important;
-    transform: scale(1.04);
-  }
-
-  #our-locations.lb-scroll-section.is-section-open.is-section-hover .lb-locations-tagline,
-  #our-locations .lb-locations-tagline:hover {
-    transform: scale(1.08) !important;
-    font-weight: 800 !important;
-    color: #4EB838 !important;
   }
 
   /* ================= SHARED SECTION HEADINGS ================= */
@@ -1489,11 +1462,11 @@
     object-fit: cover;
     object-position: right center;
     display: block;
-    transition: transform 0.45s ease;
+    transition: transform 0.4s ease;
   }
 
   .lb-srv-ref-card:hover img {
-    transform: scale(1.06);
+    transform: scale(1.05);
   }
 
   .lb-srv-ref-overlay {
@@ -1522,21 +1495,14 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    border: 1.5px solid rgba(255, 255, 255, 0.75);
-    background: rgba(10, 46, 70, 0.45);
-    color: #FFFFFF;
+    border: 1.5px solid rgba(255, 255, 255, 0.75) !important;
+    background: rgba(10, 46, 70, 0.45) !important;
+    color: #FFFFFF !important;
     font-size: 12px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 12px;
-    transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
-  }
-
-  .lb-srv-ref-card:hover .lb-srv-ref-icon {
-    background-color: #6AD053;
-    border-color: #6AD053;
-    color: #0A2E46;
   }
 
   .lb-srv-ref-content h3 {
@@ -1827,7 +1793,14 @@
     box-shadow: 0 10px 22px rgba(78, 184, 56, 0.35);
   }
 
-  /* ================= GET TO KNOW US HOVER ZOOM + BOLD (WHITE ONLY) ================= */
+  /* ================= GET TO KNOW US HOVER ONLY WHEN POINTING DIRECTLY AT EACH POINT ================= */
+  #getToKnowUsSection:hover .lb-about-list .about-h4,
+  #getToKnowUsSection.is-section-hover .lb-about-list .about-h4 {
+    color: #FFFFFF !important;
+    font-weight: 500 !important;
+    transform: none !important;
+  }
+
   .lb-about-list .about-h4 {
     display: inline-flex;
     align-items: center;
@@ -1838,27 +1811,28 @@
     transition: transform 0.25s ease, font-weight 0.2s ease, color 0.2s ease;
   }
 
-  .lb-about-list .about-h4:hover {
+  #getToKnowUsSection .lb-about-list .about-h4:hover {
     color: #FFFFFF !important;
     font-weight: 800 !important;
-    transform: scale(1.08);
+    transform: scale(1.08) !important;
   }
 
-  /* ================= GLOBAL PRESENCE TEXT GREEN + HOVER ZOOM & BOLD ================= */
+  /* ================= GLOBAL PRESENCE TEXT AUTOMATIC BLINK ================= */
+  @keyframes lbLocationsBlink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.2;
+    }
+  }
+
   #our-locations .lb-locations-tagline {
     display: inline-block !important;
     font-size: 19px !important;
-    font-weight: 500 !important;
+    font-weight: 600 !important;
     color: #4EB838 !important;
-    transform-origin: center center;
-    cursor: pointer;
-    transition: transform 0.25s ease, font-weight 0.2s ease;
-  }
-
-  #our-locations .lb-locations-tagline:hover {
-    transform: scale(1.08) !important;
-    font-weight: 800 !important;
-    color: #4EB838 !important;
+    animation: lbLocationsBlink 1.6s ease-in-out infinite !important;
   }
 
   /* ================= TESTIMONIAL STYLES ================= */
@@ -1907,19 +1881,6 @@
 
   /* ================= TABLET & MOBILE RESPONSIVE ================= */
   @media (max-width: 991px) {
-    section.lb-scroll-section.is-section-open.is-section-hover .lb-srv-ref-card,
-    .lb-srv-ref-card:active {
-      transform: translateY(-4px);
-      box-shadow: 0 14px 28px rgba(10, 46, 70, 0.2);
-    }
-
-    section.lb-scroll-section.is-section-open.is-section-hover .lb-srv-ref-icon,
-    .lb-srv-ref-card:active .lb-srv-ref-icon {
-      background-color: #6AD053;
-      border-color: #6AD053;
-      color: #0A2E46;
-    }
-
     #careersSection .lb-explore-opp-btn:active {
       background-color: #4EB838 !important;
       color: #FFFFFF !important;
